@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
+	public String a="zx";
+
 
     @RequestMapping("/zx/test")
     public  String test(){
