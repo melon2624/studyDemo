@@ -12,6 +12,7 @@ public class Test05 {
         Instant start = Instant.now();
         long sum = 0;
         System.out.println("zhangxin");
+        System.out.println("zhangxinnnnnn");
         for (long i = 0; i < 50000000000L; i++) {
             sum += i;
         }
