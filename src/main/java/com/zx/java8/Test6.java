@@ -5,4 +5,8 @@ package com.zx.java8;
  * @date： 2021-07-03 18:10
  */
 public class Test6 {
+
+    public void fun(){
+
+    }
 }
