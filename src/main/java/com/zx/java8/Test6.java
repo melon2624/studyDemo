@@ -8,5 +8,6 @@ public class Test6 {
 
     public void fun(){
         System.out.println("zx");
+        System.out.println("zxxxx");
     }
 }
