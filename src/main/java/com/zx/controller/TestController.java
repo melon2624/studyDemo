@@ -8,7 +8,6 @@ public class TestController {
 
 	public String a="zx";
 
-
     @RequestMapping("/zx/test")
     public  String test(){
 
