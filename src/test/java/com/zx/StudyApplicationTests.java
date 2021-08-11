@@ -10,4 +10,10 @@ class StudyApplicationTests {
     void contextLoads() {
     }
 
+
+    @Test
+    void  test(){
+
+    }
+
 }
