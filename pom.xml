@@ -4,7 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zx</groupId>
     <artifactId>study</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>zx-spring</module>
+        <module>zx-spring</module>
+    </modules>
     <name>study</name>
     <description>Demo project for Spring Boot</description>
 
