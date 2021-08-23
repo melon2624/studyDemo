@@ -4,12 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zx</groupId>
     <artifactId>study</artifactId>
-    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <modules>
-        <module>zx-spring</module>
-        <module>zx-spring</module>
-    </modules>
+
     <name>study</name>
     <description>Demo project for Spring Boot</description>
 
@@ -21,11 +17,20 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -96,14 +101,14 @@
                 <configuration>
                     <mainClass>com.zx.StudyApplication</mainClass>
                 </configuration>
-                <executions>
+               <!-- <executions>
                     <execution>
                         <id>repackage</id>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions>-->
             </plugin>
         </plugins>
     </build>
