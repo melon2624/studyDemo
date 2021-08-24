@@ -94,4 +94,12 @@ public class MergeSort {
       mergesort(arr,0,arr.length-1);
     }
 
+
+    public  void  merge2(int[] arr, int left, int mid, int right){
+
+
+
+
+    }
+
 }

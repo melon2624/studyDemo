@@ -76,8 +76,6 @@ public class DeleteGivenValue {
         node5.next = node6;
         node6.next = node7;
 
-
-
     }
 
 }
