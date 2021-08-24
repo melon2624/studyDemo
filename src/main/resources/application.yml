@@ -1,9 +1,7 @@
 # 应用名称
 spring:
-  application:
-           name: study
   redis:
-    host: 192.168.171.129
+    host: 192.168.202.128
     password: 123456
     port: 6379
 # 应用服务 WEB 访问端口
