@@ -45,7 +45,7 @@ public class TwoStacksImplementQueue {
         TwoStacksQueue stacksQueue=new TwoStacksQueue();
 
         stacksQueue.push(1);
-        stacksQueue.push(2);;
+        stacksQueue.push(2);
         stacksQueue.push(3);
         stacksQueue.push(4);
         stacksQueue.push(5);
@@ -55,7 +55,5 @@ public class TwoStacksImplementQueue {
         }
 
     }
-
-
 
 }
