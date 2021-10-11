@@ -16,3 +16,5 @@ spring:
     props:
         sql:
           show: true
+  profiles:
+    active: sharding-database

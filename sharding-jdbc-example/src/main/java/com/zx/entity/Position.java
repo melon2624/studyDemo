@@ -2,6 +2,9 @@ package com.zx.entity;
 
 import lombok.Data;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+
 /**
  * @author zhangxin
  * @date 2021/10/11 1:26
@@ -9,7 +12,9 @@ import lombok.Data;
 @Data
 public class Position {
 
-    private Long id;
+    @Id
+    @Column(name = "`id`")
+    private Integer id;
 
     private String name;
 

@@ -25,9 +25,9 @@
     delete from `position`
     where Id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" keyColumn="Id" keyProperty="id" parameterType="com.zx.entity.Position" useGeneratedKeys="true">
+  <insert id="insert"  parameterType="com.zx.entity.Position" >
     <!--@mbg.generated-->
-    insert into `position` (`name`, salary, city
+    insert into `position` ( `name`, salary, city
       )
     values (#{name,jdbcType=VARCHAR}, #{salary,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}
       )
