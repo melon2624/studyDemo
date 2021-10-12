@@ -25,5 +25,13 @@ spring:
           key-generator:
             column: id
             type: SNOWFLAKE
+        position_detail:
+          database-strategy :
+            inline:
+              sharding-column: pid
+              algorithm-expression: ds$->{pid % 2}
+          key-generator:
+            column: id
+            type: SNOWFLAKE
 #sharding-database
 

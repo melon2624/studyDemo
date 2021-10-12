@@ -1,6 +1,9 @@
 package com.zx.service;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zx.entity.Position;
+import com.zx.entity.PositionDetail;
+import com.zx.mapper.PositionDetailMapper;
 import com.zx.mapper.PositionMapper;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -10,40 +13,9 @@ import javax.annotation.Resource;
  * @date 2021/10/11 1:20
  */
 @Service
-public class PositionServiceImpl implements PositionService {
+public class PositionServiceImpl extends ServiceImpl<PositionMapper, Position> implements  PositionService {
 
-    @Resource
-    private PositionMapper positionMapper;
-
-    @Override
-    public int deleteByPrimaryKey(Long id) {
-        return positionMapper.deleteByPrimaryKey(id);
-    }
-
-    @Override
-    public int insert(Position record) {
-        return positionMapper.insert(record);
-    }
-
-    @Override
-    public int insertSelective(Position record) {
-        return positionMapper.insertSelective(record);
-    }
-
-    @Override
-    public Position selectByPrimaryKey(Long id) {
-        return positionMapper.selectByPrimaryKey(id);
-    }
-
-    @Override
-    public int updateByPrimaryKeySelective(Position record) {
-        return positionMapper.updateByPrimaryKeySelective(record);
-    }
-
-    @Override
-    public int updateByPrimaryKey(Position record) {
-        return positionMapper.updateByPrimaryKey(record);
-    }
 
 }
+
 

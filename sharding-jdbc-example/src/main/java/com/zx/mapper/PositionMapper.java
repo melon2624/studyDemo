@@ -1,21 +1,12 @@
 package com.zx.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zx.entity.Position;
 
 /**
- * @author zhangxin
- * @date 2021/10/11 1:26
- */
-public interface PositionMapper {
-    int deleteByPrimaryKey(Long id);
+ * @author : zhangxin
+ * @date : 2021-10-12 15:45
+ **/
+public interface PositionMapper extends BaseMapper<Position> {
 
-    int insert(Position record);
-
-    int insertSelective(Position record);
-
-    Position selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(Position record);
-
-    int updateByPrimaryKey(Position record);
 }
