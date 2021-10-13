@@ -17,4 +17,4 @@ spring:
         sql:
           show: true
   profiles:
-    active: sharding-database
+    active: master-slave
