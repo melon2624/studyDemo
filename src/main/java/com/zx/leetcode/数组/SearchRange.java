@@ -8,7 +8,7 @@ package com.zx.leetcode.数组;
  **/
 public class SearchRange {
 
-
+    //还没做完
 
     public  static  int[] searchRange(int[] array,int target){
         int[] num=new int[2];
