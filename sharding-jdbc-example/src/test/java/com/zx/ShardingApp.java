@@ -1,6 +1,8 @@
 package com.zx;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.zx.entity.BOrder;
 import com.zx.entity.City;
@@ -16,6 +18,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 @SpringBootTest
@@ -91,6 +94,19 @@ class ShardingAppTests {
         bOrderMapper.insert(bOrder);
 
     }
+
+
+    @Test
+    public  void  testMasterSlave(){
+        City city=new City();
+        city.setName("guangzhou");
+        city.setProvince("guangdong");
+       // cityMapper.insert(city);
+
+        Wrapper<City> wrapper=new QueryWrapper();
+    List list= cityMapper.selectList(wrapper);
+    }
+
 
 
 }
