@@ -12,6 +12,7 @@ import com.zx.mapper.BOrderMapper;
 import com.zx.mapper.CityMapper;
 import com.zx.mapper.PositionDetailMapper;
 import com.zx.mapper.PositionMapper;
+import com.zx.vo.PositionVo;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -53,6 +54,14 @@ class ShardingAppTests {
             positionDetail.setDescription("message"+i);
             positionDetailMapper.insert(positionDetail);
         }
+    }
+
+
+    @Test
+    public  void  findPositionAndDetail(){
+
+     PositionVo positionVo= positionMapper.getPositionDes(654728998999293952L);
+
     }
 
     public  void  testfindById(){
@@ -105,6 +114,13 @@ class ShardingAppTests {
 
         Wrapper<City> wrapper=new QueryWrapper();
     List list= cityMapper.selectList(wrapper);
+    }
+
+
+
+    @Test
+    public  void  testHint(){
+
     }
 
 

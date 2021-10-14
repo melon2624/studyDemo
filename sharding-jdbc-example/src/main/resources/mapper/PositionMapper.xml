@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zx.mapper.PositionMapper">
-  <resultMap id="BaseResultMap" type="com.zx.entity.Position">
-    <!--@mbg.generated-->
-    <!--@Table `position`-->
-    <id column="Id" jdbcType="BIGINT" property="id" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="salary" jdbcType="VARCHAR" property="salary" />
-    <result column="city" jdbcType="VARCHAR" property="city" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <!--@mbg.generated-->
-    Id, `name`, salary, city
-  </sql>
+    <resultMap id="BaseResultMap" type="com.zx.entity.Position">
+        <!--@mbg.generated-->
+        <!--@Table `position`-->
+        <id column="Id" jdbcType="BIGINT" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="salary" jdbcType="VARCHAR" property="salary"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        Id, `name`, salary, city
+    </sql>
+
+
+    <select id="getPositionDes" resultType="com.zx.vo.PositionVo">
+
+
+select p.id,p.name,p.salary,p.city,pd.description from position p left join position_detail pd on(p.id=pd.pid) where p.id=#{id}
+
+  </select>
+
 </mapper>
