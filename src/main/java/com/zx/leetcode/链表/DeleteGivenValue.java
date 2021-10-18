@@ -1,6 +1,7 @@
 package com.zx.leetcode.链表;
 
-import com.zx.leetcode.链表.ReverseList;
+
+import java.util.List;
 
 /**
  * @author : zhangxin
@@ -46,19 +47,76 @@ public class DeleteGivenValue {
         }
 
         //递归
-        public static Node deleteGivenValue2(int data, Node head){
+        public static Node deleteGivenValue2(int data, Node head) {
 
-            if (head==null){
+            if (head == null) {
                 return null;
             }
 
-            head.next=deleteGivenValue2(data,head.next);
-            if (head.value==data){
+            head.next = deleteGivenValue2(data, head.next);
+            if (head.value == data) {
                 return head.next;
             }
-            return head ;
+            return head;
         }
     }
+
+    //第二次或者第三次做，增加一个虚拟头节点
+    public static ListNode removeElements1(ListNode head, int val) {
+
+        if (head == null) {
+            return null;
+        }
+
+        ListNode dummy = new ListNode(-1, head);
+
+        ListNode pre = dummy;
+
+        ListNode cur = head;
+
+        while (cur != null) {
+            if (cur.val == val) {
+                pre.next = cur.next;
+                cur = cur.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
+            }
+        }
+        return dummy.next;
+    }
+
+    //第二次或者第三次做，不增加一个虚拟头节点
+    public static ListNode removeElements2(ListNode head, int val) {
+
+
+        while (head != null && head.val == val) {
+            head = head.next;
+        }
+
+        if (head == null) {
+            return null;
+        }
+
+        ListNode pre = head;
+
+        ListNode cur = head.next;
+
+        while (cur != null) {
+
+            if (cur.val == val) {
+                pre.next = cur.next;
+                cur = cur.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
+            }
+        }
+
+        return head;
+
+    }
+
 
     public static void main(String[] args) {
         Node node1 = new Node(8);
@@ -75,6 +133,25 @@ public class DeleteGivenValue {
         node4.next = node5;
         node5.next = node6;
         node6.next = node7;
+
+
+        ListNode listNode1 = new ListNode(8);
+        ListNode listNode2 = new ListNode(8);
+        ListNode listNode3 = new ListNode(3);
+        ListNode listNode4 = new ListNode(4);
+        ListNode listNode5 = new ListNode(8);
+        ListNode listNode6 = new ListNode(5);
+        ListNode listNode7 = new ListNode(2);
+
+        listNode1.next = listNode2;
+        listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
+        listNode5.next = listNode6;
+        listNode6.next = listNode7;
+
+        ListNode listNode = removeElements1(listNode1, 3);
+
 
     }
 
