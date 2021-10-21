@@ -28,9 +28,9 @@ public class TotalFruit {
     //暴力解法
     public static int totalFruit(int[] fruits) {
 
-        Map map=new HashMap<>();
+        Map map = new HashMap<>();
 
-        for (int i=0;i<fruits.length;i++){
+        for (int i = 0; i < fruits.length; i++) {
 
         }
 
@@ -40,7 +40,7 @@ public class TotalFruit {
 
     public static void main(String[] args) {
 
-        Map<Integer,Integer> map=new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
     }
 }

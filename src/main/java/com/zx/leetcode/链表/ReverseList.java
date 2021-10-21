@@ -40,6 +40,32 @@ public class ReverseList {
         return pre;
     }
 
+    //第二遍
+    public static ListNode reverseList2(ListNode head) {
+
+        ListNode pre = null;
+
+        ListNode cur = head;
+
+        ListNode temp = null;
+        while (cur != null) {
+
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+
+        return pre;
+    }
+
+    //递归操作
+    public static ListNode reverseList3(ListNode head){
+
+        return null;
+    }
+
+
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
@@ -68,12 +94,6 @@ public class ReverseList {
             superior=
         }*/
         return null;
-    }
-
-    //第二遍
-    public static ListNode reverseList2(ListNode head) {
-
-      return null;
     }
 
 
