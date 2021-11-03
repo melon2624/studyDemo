@@ -1,4 +1,4 @@
-package com.zx.leetcode.二叉树;
+package com.zx.leetcode.tree;
 
 /**
  * 226.翻转一棵二叉树

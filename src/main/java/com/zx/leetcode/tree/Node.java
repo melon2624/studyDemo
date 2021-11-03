@@ -1,4 +1,4 @@
-package com.zx.leetcode.二叉树;
+package com.zx.leetcode.tree;
 
 /**
  * @author : zhangxin
