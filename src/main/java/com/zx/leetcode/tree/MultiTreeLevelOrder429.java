@@ -10,7 +10,7 @@ import java.util.Queue;
  * @author : zhangxin
  * @date : 2021-11-03 20:04
  **/
-public class MultiTreeLevelOrder {
+public class MultiTreeLevelOrder429 {
 
     public static class Node {
         public int val;
