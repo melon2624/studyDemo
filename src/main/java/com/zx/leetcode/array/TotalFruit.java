@@ -1,4 +1,4 @@
-package com.zx.leetcode.数组;
+package com.zx.leetcode.array;
 
 import java.util.HashMap;
 import java.util.Map;

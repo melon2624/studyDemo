@@ -1,4 +1,4 @@
-package com.zx.leetcode.数组;
+package com.zx.leetcode.array;
 
 /**
  * 移除元素  no.27

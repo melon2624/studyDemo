@@ -1,4 +1,4 @@
-package com.zx.leetcode.位运算;
+package com.zx.leetcode.bitOperation;
 
 /**
  * 力扣136. 只出现一次的数字

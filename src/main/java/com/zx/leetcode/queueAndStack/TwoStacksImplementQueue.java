@@ -1,4 +1,4 @@
-package com.zx.leetcode.队列和栈;
+package com.zx.leetcode.queueAndStack;
 
 import java.util.Stack;
 

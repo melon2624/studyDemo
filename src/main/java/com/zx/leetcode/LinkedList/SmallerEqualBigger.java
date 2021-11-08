@@ -1,4 +1,4 @@
-package com.zx.leetcode.链表;
+package com.zx.leetcode.LinkedList;
 
 /**
  * 将单向链表按某值划分成左边小、中间相等、右边大的形式

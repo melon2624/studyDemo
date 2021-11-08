@@ -1,4 +1,4 @@
-package com.zx.leetcode.数组;
+package com.zx.leetcode.array;
 
 /**
  * 209. 长度最小的子数组  中等

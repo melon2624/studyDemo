@@ -1,4 +1,4 @@
-package com.zx.leetcode.数组;
+package com.zx.leetcode.array;
 
 /**
  * 有序数组的平方 no.977

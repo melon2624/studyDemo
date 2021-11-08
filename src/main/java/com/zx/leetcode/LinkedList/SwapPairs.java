@@ -1,4 +1,4 @@
-package com.zx.leetcode.链表;
+package com.zx.leetcode.LinkedList;
 
 /**
  * 24. 两两交换链表中的节点

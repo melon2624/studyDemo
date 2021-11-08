@@ -1,7 +1,5 @@
-package com.zx.leetcode.链表;
+package com.zx.leetcode.LinkedList;
 
-
-import java.util.List;
 
 /**
  * @author : zhangxin

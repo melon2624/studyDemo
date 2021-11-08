@@ -1,4 +1,4 @@
-package com.zx.leetcode.位运算;
+package com.zx.leetcode.bitOperation;
 
 /**
  * @author zhangxin

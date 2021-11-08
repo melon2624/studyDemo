@@ -1,4 +1,4 @@
-package com.zx.leetcode.排序;
+package com.zx.leetcode.sort;
 
 /**
  * 冒泡排序

@@ -56,6 +56,28 @@ public class UnRecursiveTraversalBT22222 {
         }
     }
 
+    //中序遍历第三遍
+    public static void in3(TreeNode root) {
+
+        if (root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+
+        TreeNode cur = root;
+
+        while (!stack.empty() || cur != null) {
+
+            while (cur != null) {
+                stack.push(cur);
+                cur = cur.left;
+            }
+            TreeNode node = stack.pop();
+            System.out.println(node.val);
+            cur = node.right;
+        }
+    }
+
     //后续遍历
     public static void pos(Node node) {
 
@@ -76,7 +98,7 @@ public class UnRecursiveTraversalBT22222 {
             }
         }
         while (!stack2.empty()) {
-            Node node1=stack2.pop();
+            Node node1 = stack2.pop();
             System.out.println(node1.value);
         }
     }
@@ -90,8 +112,9 @@ public class UnRecursiveTraversalBT22222 {
         head.right.left = new Node(6);
         head.right.right = new Node(7);
         //  pre(head);
-       // in(head);
-        pos(head);
+        // in(head);
+        //  pos(head);
+       // in3(head);
     }
 
 }
