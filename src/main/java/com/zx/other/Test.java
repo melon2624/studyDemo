@@ -46,10 +46,12 @@ public class Test {
 
         Student b=queue.peek();*/
 
-        Queue<Student> queue = new LinkedList<>();
+       /* Queue<Student> queue = new LinkedList<>();
         queue.add(null);
         queue.add(null);
-        System.out.println(queue.size());
+        System.out.println(queue.size());*/
+
+        System.out.println((2<<3) -1);
 
 
     }

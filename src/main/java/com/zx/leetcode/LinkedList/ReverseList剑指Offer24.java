@@ -4,7 +4,7 @@ package com.zx.leetcode.LinkedList;
  * @author : zhangxin
  * @date : 2021-08-19 16:27
  **/
-public class ReverseList {
+public class ReverseList剑指Offer24 {
 
     public static class ListNode {
         int code;
@@ -59,8 +59,27 @@ public class ReverseList {
         return pre;
     }
 
+    //第三遍
+    public static ListNode reverseList3(ListNode head) {
+
+        ListNode pre=null;
+        ListNode cur=head;
+
+        ListNode temp=null;
+
+        while (cur!=null){
+
+            temp=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=temp;
+        }
+
+        return pre;
+    }
+
     //递归操作
-    public static ListNode reverseList3(ListNode head){
+    public static ListNode reverseList4(ListNode head) {
 
         return null;
     }

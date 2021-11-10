@@ -1,13 +1,13 @@
 package com.zx.leetcode.LinkedList;
 
 /**
- * 24. 两两交换链表中的节点
+ * 24.两两交换链表中的节点
  *
  * @author : zhangxin
  * @date : 2021-10-20 15:49
  **/
 
-public class SwapPairs {
+public class SwapPairs两两交换链表中的节点24 {
 
 
     //递归法
