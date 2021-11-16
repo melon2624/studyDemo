@@ -12,40 +12,52 @@ package com.zx.leetcode.tree;
 
 /**
  * 654.最大二叉树
+ *
  * @author : zhangxin
  * @date : 2021-09-18 17:59
  **/
 public class ConstructMaximumBinaryTree {
 
-    public static  int arrayMax(int[] nums){
-        if (nums==null){
-            return -1;
-        }
-        int max=Integer.MIN_VALUE;
-        int maxIndex=0;
-        for (int i=0;i<nums.length;i++){
-            if (nums[i]>max){
-                max=nums[i];
-                maxIndex=i;
+    public static int arrayMax(int[] nums, int left, int right) {
+
+        int max = Integer.MIN_VALUE;
+        int maxIndex = 0;
+        for (int i = left; i <= right; i++) {
+            if (nums[i] > max) {
+                max = nums[i];
+                maxIndex = i;
             }
         }
         return maxIndex;
     }
 
 
-    public  static  void constructMaximumBinaryTree(int[] nums){
+    public static TreeNode constructMaximumBinaryTree(int[] nums, int left, int right) {
 
-        int maxIndex=arrayMax(nums);
+        if (right - left < 0) {
+            return null;
+        }
+        if (right - left == 0) {
+            return new TreeNode(nums[left]);
+        }
+        int maxIndex = arrayMax(nums, left, right);
+
+        TreeNode root = new TreeNode(nums[maxIndex]);
+
+        root.left=constructMaximumBinaryTree(nums,left,maxIndex-1);
+        root.right=constructMaximumBinaryTree(nums,maxIndex+1,right);
+
+        return root;
 
     }
 
     public static void main(String[] args) {
 
-        int[] nums=new int[]{ 3,2,1,6,0,5};
+        int[] nums = new int[]{3, 2, 1, 6, 0, 5};
 
-       //int max= arrayMax(nums);
+        //int max= arrayMax(nums);
 
-        constructMaximumBinaryTree(nums);
+       // constructMaximumBinaryTree(nums);
     }
 
 }

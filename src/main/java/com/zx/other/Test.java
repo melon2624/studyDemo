@@ -51,8 +51,12 @@ public class Test {
         queue.add(null);
         System.out.println(queue.size());*/
 
-        System.out.println((2<<3) -1);
+        System.out.println((2 << 3) - 1);
 
+        String a = "CYH5_20211115124345044240";
+        String b = a.substring(5, 11);
+        System.out.println(b);
+        System.out.println(Integer.MIN_VALUE);
 
     }
 
