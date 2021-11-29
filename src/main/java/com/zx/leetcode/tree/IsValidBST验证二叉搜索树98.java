@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * @author : zhangxin
  * @date : 2021-09-16 13:46
  **/
-public class IsBST {
+public class IsValidBST验证二叉搜索树98 {
 
 
     //中序遍历判断是否是搜索二叉树
