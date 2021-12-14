@@ -33,27 +33,36 @@ public class CombinationSum组合总和II40 {
             use = false;
         }
         Arrays.sort(candidates);
-        combinationSumHelper(candidates,target,0);
+        combinationSumHelper(candidates, target, 0, 0);
 
-        return null;
+        return result;
     }
 
-    public static void combinationSumHelper(int[] candidates, int target, int startIndex) {
-        int sum = 0;
-        for (Integer a : path) {
-            sum += a;
-        }
+    public static void combinationSumHelper(int[] candidates, int target, int startIndex, int sum) {
+
         if (sum == target) {
-            result.add(path);
+            result.add(new ArrayList<>(path));
         } else if (sum > target) {
             return;
         }
+                                 //sum + candidates[i] <= target优化
+        for (int i = startIndex; i < candidates.length; i++) {
 
-
+            if (i > 0 && candidates[i - 1] == candidates[i] && used[i - 1] == false) {
+                continue;
+            }
+            sum += candidates[i];
+            used[i] = true;
+            path.add(candidates[i]);
+            combinationSumHelper(candidates, target, i + 1, sum);
+            sum -= candidates[i];
+            path.remove(path.size() - 1);
+            used[i] = false;
+        }
     }
 
-
     public static void main(String[] args) {
-
+        int[] candidates = new int[]{10, 1, 2, 7, 6, 1, 5};
+        combinationSum2(candidates, 8);
     }
 }
