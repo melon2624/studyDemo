@@ -12,8 +12,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class StudyApplication {
 
     public static void main(String[] args) {
-      ApplicationContext applicationContext= SpringApplication.run(StudyApplication.class, args);
-        TransactionService transactionService= (TransactionService) applicationContext.getBean("transactionService");
+        ApplicationContext applicationContext = SpringApplication.run(StudyApplication.class, args);
+        TransactionService transactionService = (TransactionService) applicationContext.getBean("transactionService");
     }
 
 }

@@ -4,13 +4,13 @@ package com.zx.entity;
  * @author : zhangxin
  * @date : 2021-11-03 17:38
  **/
-public class Student  {
+public class Student {
 
-    private  Integer id;
+    private Integer id;
 
-    private  String name;
+    private String name;
 
-    private  Integer age;
+    private Integer age;
 
     public Student(Integer id, String name, Integer age) {
         this.id = id;

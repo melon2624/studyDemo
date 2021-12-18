@@ -9,15 +9,15 @@ import lombok.Data;
 @Data
 public class PositionVo {
 
-    public  Long id;
+    public Long id;
 
-    public  String name;
+    public String name;
 
-    public  String salary;
+    public String salary;
 
-    public  String city;
+    public String city;
 
-    public  String description;
+    public String description;
 
 
 }

@@ -47,19 +47,18 @@ public class TestReadWriteLock {
 
     public static void main(String[] args) {
 
-        Runnable readRunnbale=()->read(lock);
-        Runnable writeRunnble=()->write(lock,5);
+        Runnable readRunnbale = () -> read(lock);
+        Runnable writeRunnble = () -> write(lock, 5);
 
-        for (int i=0;i<12;i++){
+        for (int i = 0; i < 12; i++) {
             new Thread(readRunnbale).start();
         }
 
-        for (int j=0;j<3;j++){
+        for (int j = 0; j < 3; j++) {
             new Thread(writeRunnble).start();
         }
 
     }
-
 
 
 }

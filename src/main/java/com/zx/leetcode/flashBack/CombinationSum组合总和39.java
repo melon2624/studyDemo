@@ -26,12 +26,12 @@ public class CombinationSum组合总和39 {
 
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
 
-        combinationSumHelper(candidates, target,0);
+        combinationSumHelper(candidates, target, 0);
 
         return result;
     }
 
-    public static void combinationSumHelper(int[] candidates, int target,int startIndex) {
+    public static void combinationSumHelper(int[] candidates, int target, int startIndex) {
         int sum = 0;
         for (Integer a : path) {
             sum = sum + a;
@@ -44,7 +44,7 @@ public class CombinationSum组合总和39 {
 
         for (int i = startIndex; i < candidates.length; i++) {
             path.add(candidates[i]);
-            combinationSumHelper(candidates, target,i);
+            combinationSumHelper(candidates, target, i);
             path.remove(path.size() - 1);
         }
 
@@ -53,7 +53,7 @@ public class CombinationSum组合总和39 {
     public static void main(String[] args) {
         int[] candidates = new int[]{2, 3, 6, 7};
         int target = 7;
-        combinationSum(candidates,target);
+        combinationSum(candidates, target);
     }
 
 }

@@ -6,6 +6,7 @@ import com.zx.entity.PositionDetail;
 import com.zx.mapper.PositionDetailMapper;
 import com.zx.mapper.PositionMapper;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 
 /**
@@ -13,7 +14,7 @@ import javax.annotation.Resource;
  * @date 2021/10/11 1:20
  */
 @Service
-public class PositionServiceImpl extends ServiceImpl<PositionMapper, Position> implements  PositionService {
+public class PositionServiceImpl extends ServiceImpl<PositionMapper, Position> implements PositionService {
 
 
 }

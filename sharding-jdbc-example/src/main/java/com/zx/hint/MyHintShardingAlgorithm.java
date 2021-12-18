@@ -14,8 +14,7 @@ public class MyHintShardingAlgorithm implements HintShardingAlgorithm<Long> {
     @Override
     public Collection<String> doSharding(Collection<String> collection, HintShardingValue<Long> hintShardingValue) {
 
-        Collection<String> result=new ArrayList<>();
-
+        Collection<String> result = new ArrayList<>();
 
 
         return null;

@@ -51,7 +51,7 @@ public class Test02 {
         System.out.println(str);
 */
 
-        ArrayList<String> strings=new ArrayList<>();
+        ArrayList<String> strings = new ArrayList<>();
         strings.add("zx");
         strings.add("zm");
         strings.add("jy");
@@ -62,13 +62,11 @@ public class Test02 {
             }
         });
 
-        strings.forEach((s)->{
+        strings.forEach((s) -> {
             System.out.println(s);
         });
 
     }
-
-
 
 
 }

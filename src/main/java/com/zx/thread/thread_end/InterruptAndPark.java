@@ -11,7 +11,7 @@ import java.util.concurrent.locks.LockSupport;
 public class InterruptAndPark {
 
     public static void main(String[] args) {
-        Thread t=new Thread(()->{
+        Thread t = new Thread(() -> {
             System.out.println("1");
             LockSupport.park();
             System.out.println("2");

@@ -7,5 +7,5 @@ package com.zx.java8.service;
 @FunctionalInterface
 public interface YouCanFunctionInterface {
 
-    String test(int i,int j);
+    String test(int i, int j);
 }

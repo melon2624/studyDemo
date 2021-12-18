@@ -33,10 +33,10 @@ public class RightSideView {
                 if (i == size - 1) {
                     result.add(node.val);
                 }
-                if (node.left!=null){
+                if (node.left != null) {
                     queue.add(node.left);
                 }
-                if (node.right!=null){
+                if (node.right != null) {
                     queue.add(node.right);
                 }
             }
@@ -54,11 +54,11 @@ public class RightSideView {
         head.right.left = new TreeNode(6);
         head.right.right = new TreeNode(7);
 
-       List<Integer> result= rightSideView(head);
+        List<Integer> result = rightSideView(head);
 
-       for (Integer a:result){
-           System.out.println(a);
-       }
+        for (Integer a : result) {
+            System.out.println(a);
+        }
 
     }
 

@@ -8,56 +8,52 @@ import java.util.Stack;
  **/
 public class GetMinStack2 {
 
-    public  static  class MyStack{
+    public static class MyStack {
 
         public Stack<Integer> stackData;
 
-        public  Stack<Integer> stackMin;
+        public Stack<Integer> stackMin;
 
-        public  MyStack(){
-            stackData=new Stack<>();
-            stackMin=new Stack<>();
+        public MyStack() {
+            stackData = new Stack<>();
+            stackMin = new Stack<>();
         }
 
 
-        public   void push(Integer data){
+        public void push(Integer data) {
             stackData.push(data);
-            if (stackMin.empty()){
+            if (stackMin.empty()) {
                 stackMin.push(data);
-            }else {
-                Integer temp=stackMin.peek();
-                if (temp<data){
+            } else {
+                Integer temp = stackMin.peek();
+                if (temp < data) {
                     stackMin.push(temp);
-                }else {
+                } else {
                     stackMin.push(data);
                 }
             }
         }
 
-        public  Integer pop(){
-                if (stackData.empty()){
-                    throw new RuntimeException("stack is empty");
-                }else {
-                    stackMin.pop();
+        public Integer pop() {
+            if (stackData.empty()) {
+                throw new RuntimeException("stack is empty");
+            } else {
+                stackMin.pop();
 
-                    return stackData.pop();
-                }
+                return stackData.pop();
+            }
         }
 
-        public  Integer getMin(){
-            if (stackData.empty()){
-                throw  new RuntimeException("stack is empty");
-            }else {
+        public Integer getMin() {
+            if (stackData.empty()) {
+                throw new RuntimeException("stack is empty");
+            } else {
                 return stackMin.peek();
             }
         }
 
 
-
-
     }
-
-
 
 
 }

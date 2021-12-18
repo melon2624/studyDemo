@@ -39,38 +39,38 @@ class ShardingAppTests {
     }
 
     @Test
-    public  void testAdd(){
+    public void testAdd() {
 
-        for (int i=1;i<=20;i++){
-            Position position=new Position();
-           // position.setId(i);
-            position.setName("zx"+i);
+        for (int i = 1; i <= 20; i++) {
+            Position position = new Position();
+            // position.setId(i);
+            position.setName("zx" + i);
             position.setSalary("100");
             position.setCity("shenzhen");
             positionMapper.insert(position);
 
-            PositionDetail positionDetail=new PositionDetail();
+            PositionDetail positionDetail = new PositionDetail();
             positionDetail.setPid(position.getId());
-            positionDetail.setDescription("message"+i);
+            positionDetail.setDescription("message" + i);
             positionDetailMapper.insert(positionDetail);
         }
     }
 
 
     @Test
-    public  void  findPositionAndDetail(){
+    public void findPositionAndDetail() {
 
-     PositionVo positionVo= positionMapper.getPositionDes(654728998999293952L);
+        PositionVo positionVo = positionMapper.getPositionDes(654728998999293952L);
 
     }
 
-    public  void  testfindById(){
+    public void testfindById() {
 
     }
 
     @Test
-    public  void testBroadTable(){
-        City city=new City();
+    public void testBroadTable() {
+        City city = new City();
         city.setName("shenzhen");
         city.setProvince("guangdong");
         cityMapper.insert(city);
@@ -80,12 +80,12 @@ class ShardingAppTests {
     private BOrderMapper bOrderMapper;
 
     @Test
-    public  void  testShardingBOrder(){
+    public void testShardingBOrder() {
 
-        Random random=new Random();
-        int companyId=random.nextInt(10);
+        Random random = new Random();
+        int companyId = random.nextInt(10);
 
-        BOrder bOrder=new BOrder();
+        BOrder bOrder = new BOrder();
         bOrder.setCompanyId(companyId);
         bOrder.setIsDel(false);
         bOrder.setPositionId((long) 1415458002);
@@ -106,23 +106,21 @@ class ShardingAppTests {
 
 
     @Test
-    public  void  testMasterSlave(){
-        City city=new City();
+    public void testMasterSlave() {
+        City city = new City();
         city.setName("guangzhou");
         city.setProvince("guangdong");
-       // cityMapper.insert(city);
+        // cityMapper.insert(city);
 
-        Wrapper<City> wrapper=new QueryWrapper();
-    List list= cityMapper.selectList(wrapper);
+        Wrapper<City> wrapper = new QueryWrapper();
+        List list = cityMapper.selectList(wrapper);
     }
-
 
 
     @Test
-    public  void  testHint(){
+    public void testHint() {
 
     }
-
 
 
 }

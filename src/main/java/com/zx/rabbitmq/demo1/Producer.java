@@ -13,19 +13,19 @@ import java.util.concurrent.TimeoutException;
  **/
 public class Producer {
 
-    private static  final  String QUEUE_NAME="zx_queue";
+    private static final String QUEUE_NAME = "zx_queue";
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
 
         try {
             //创建连接
-            Connection connection= RabbitMQConnection.getConnection();
+            Connection connection = RabbitMQConnection.getConnection();
             //创建通道
-            Channel channel=connection.createChannel();
-            String msg="zhangxin111";
+            Channel channel = connection.createChannel();
+            String msg = "zhangxin111";
             channel.confirmSelect();
-            channel.basicPublish("",QUEUE_NAME,null,msg.getBytes());
-            boolean result=channel.waitForConfirms();
+            channel.basicPublish("", QUEUE_NAME, null, msg.getBytes());
+            boolean result = channel.waitForConfirms();
             if (result) {
                 System.out.println("消息投递成功");
             } else {
@@ -33,7 +33,7 @@ public class Producer {
             }
             channel.close();
             connection.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

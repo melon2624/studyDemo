@@ -19,14 +19,14 @@ class StudyApplicationTests {
 
 
     @Test
-    void  RedisTest(){
-        User user=new User();
+    void RedisTest() {
+        User user = new User();
         user.setId(1);
         user.setName("zhangxin");
 
         String userEntityJson = JSONObject.toJSONString(user);
 
-        redisUtils.setString("zx",userEntityJson);
+        redisUtils.setString("zx", userEntityJson);
     }
 
 }

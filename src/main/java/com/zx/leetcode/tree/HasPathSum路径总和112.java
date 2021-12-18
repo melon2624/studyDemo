@@ -16,18 +16,18 @@ public class HasPathSum路径总和112 {
 
     public static boolean dfs(TreeNode root, int targetSum, int sum) {
 
-            if (root==null){
-                return false;
+        if (root == null) {
+            return false;
+        }
+        sum = sum + root.val;
+        if (root.left == null && root.right == null) {
+            if (sum == targetSum) {
+                return true;
             }
-            sum=sum+root.val;
-            if (root.left==null&&root.right==null){
-                if (sum==targetSum){
-                    return true;
-                }
-            }
-         boolean l= dfs(root.left,targetSum,sum);
-         boolean r= dfs(root.right,targetSum,sum);
-         return l||r;
+        }
+        boolean l = dfs(root.left, targetSum, sum);
+        boolean r = dfs(root.right, targetSum, sum);
+        return l || r;
     }
 
 

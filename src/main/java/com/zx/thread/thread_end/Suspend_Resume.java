@@ -10,8 +10,8 @@ public class Suspend_Resume {
 
     public static void main(String[] args) {
 
-        Thread t=new Thread(()->{
-            while (true){
+        Thread t = new Thread(() -> {
+            while (true) {
                 System.out.println("go on");
                 SleepHelper.sleepSecond(1);
             }

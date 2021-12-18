@@ -12,14 +12,14 @@ import java.util.concurrent.TimeoutException;
  **/
 public class Consumer1 {
 
-    private static  final  String QUEUE_NAME="zx-queue";
+    private static final String QUEUE_NAME = "zx-queue";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 1.创建连接
         Connection connection = RabbitMQConnection.getConnection();
         // 2.设置通道
         Channel channel = connection.createChannel();
-                channel.basicQos(2);
+        channel.basicQos(2);
 
         DefaultConsumer defaultConsumer = new DefaultConsumer(channel) {
             @Override

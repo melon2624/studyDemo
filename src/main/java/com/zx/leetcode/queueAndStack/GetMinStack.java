@@ -49,17 +49,15 @@ public class GetMinStack {
     }
 
     public static void main(String[] args) {
-            Mystack mystack=new Mystack();
+        Mystack mystack = new Mystack();
 
-            mystack.push(5);
-            mystack.push(4);
-            mystack.push(9);
-            mystack.push(1);
+        mystack.push(5);
+        mystack.push(4);
+        mystack.push(9);
+        mystack.push(1);
 
         System.out.print(mystack.getMin());
     }
-
-
 
 
 }

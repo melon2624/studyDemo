@@ -74,14 +74,14 @@ public class UnRecursiveTraversalBT {
         }
         Stack<Node> stack = new Stack<>();
 
-        while (!stack.empty()||head!=null) {
+        while (!stack.empty() || head != null) {
             if (head != null) {
                 stack.push(head);
                 head = head.left;
             } else {
                 head = stack.pop();
                 System.out.println(head.value);
-                head=head.right;
+                head = head.right;
             }
         }
 

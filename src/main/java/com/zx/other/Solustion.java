@@ -8,7 +8,7 @@ import com.zx.leetcode.tree.TreeNode;
  **/
 public class Solustion {
 
-    public  static int sumOfLeftLeaves(TreeNode root) {
+    public static int sumOfLeftLeaves(TreeNode root) {
         return root != null ? dfs(root) : 0;
     }
 
@@ -34,7 +34,7 @@ public class Solustion {
         head.left = new TreeNode(2);
         head.right = new TreeNode(3);
         head.left.left = new TreeNode(4);
-      //  head.left.right = new TreeNode(5);
+        //  head.left.right = new TreeNode(5);
         head.right.left = new TreeNode(6);
         head.right.right = new TreeNode(7);
 

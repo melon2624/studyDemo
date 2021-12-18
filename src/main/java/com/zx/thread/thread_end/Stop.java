@@ -9,8 +9,8 @@ import com.zx.thread.SleepHelper;
 public class Stop {
     //为什么不建议用stop 直接释放锁
     public static void main(String[] args) {
-        Thread t1=new Thread(()->{
-            while (true){
+        Thread t1 = new Thread(() -> {
+            while (true) {
                 System.out.println("go on");
                 SleepHelper.sleepSecond(1);
             }

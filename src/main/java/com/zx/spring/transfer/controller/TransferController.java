@@ -28,7 +28,7 @@ public class TransferController {
     @PostMapping("/transfer")
     public void transfer(String fromCardNo, String toCardNo, int money) throws Exception {
 
-        transferServiceProxy= (TransferService) proxyFactory.getJdkProxy(transferService);
+        transferServiceProxy = (TransferService) proxyFactory.getJdkProxy(transferService);
         transferServiceProxy.transfer(fromCardNo, toCardNo, money);
 
     }

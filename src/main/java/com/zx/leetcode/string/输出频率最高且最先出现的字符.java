@@ -42,19 +42,19 @@ public class 输出频率最高且最先出现的字符 {
 
         Map<Character, Integer> map = new LinkedHashMap<>();
 
-        Character character=ch[0];
-        int maxCount=1;
+        Character character = ch[0];
+        int maxCount = 1;
         for (int i = ch.length - 1; i >= 0; i--) {
-             Integer count=map.get(ch[i]);
-             if (count==null){
-                 map.put(ch[i],1);
-             }else {
-                 map.put(ch[i],count+1);
-                 if (count+1>=maxCount){
-                    maxCount=count+1;
-                    character=ch[i];
-                 }
-             }
+            Integer count = map.get(ch[i]);
+            if (count == null) {
+                map.put(ch[i], 1);
+            } else {
+                map.put(ch[i], count + 1);
+                if (count + 1 >= maxCount) {
+                    maxCount = count + 1;
+                    character = ch[i];
+                }
+            }
         }
 
         return character;

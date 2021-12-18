@@ -27,14 +27,14 @@ public class CountNodes完全二叉树的节点个数222 {
         //完全二叉树左子树的高度
         TreeNode leftNode = root;
         int leftDepth = 0;
-        while (leftNode != null){
+        while (leftNode != null) {
             leftDepth++;
             leftNode = leftNode.left;
         }
 
         TreeNode rightNode = root;
         int rightDepth = 0;
-       while(rightNode != null) {
+        while (rightNode != null) {
             rightDepth++;
             rightNode = rightNode.right;
         }

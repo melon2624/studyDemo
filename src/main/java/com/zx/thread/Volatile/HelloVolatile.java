@@ -12,15 +12,15 @@ public class HelloVolatile {
 
     public static void main(String[] args) {
         System.out.println("m start");
-       Thread t=new Thread(()->{
-           while (running){
+        Thread t = new Thread(() -> {
+            while (running) {
 
-           }
-           System.out.println("end");
-       });
-       t.start();
+            }
+            System.out.println("end");
+        });
+        t.start();
 
         SleepHelper.sleepSecond(2);
-        running=false;
+        running = false;
     }
 }

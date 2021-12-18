@@ -15,18 +15,18 @@ public class MergeTrees合并二叉树617 {
         int rootVal = 0;
         if (root1 != null && root2 != null) {
             rootVal = root1.val + root2.val;
-        }else {
-            if (root1!=null){
-                rootVal=root1.val;
-            }else {
-                rootVal=root2.val;
+        } else {
+            if (root1 != null) {
+                rootVal = root1.val;
+            } else {
+                rootVal = root2.val;
             }
         }
 
 
-        TreeNode root=new TreeNode(rootVal);
-        root.left=mergeTrees(root1==null?null:root1.left,root2==null?null:root2.left);
-        root.right=mergeTrees(root1==null?null:root1.right,root2==null?null:root2.right);
+        TreeNode root = new TreeNode(rootVal);
+        root.left = mergeTrees(root1 == null ? null : root1.left, root2 == null ? null : root2.left);
+        root.right = mergeTrees(root1 == null ? null : root1.right, root2 == null ? null : root2.right);
 
         return root;
 
@@ -46,6 +46,6 @@ public class MergeTrees合并二叉树617 {
         head1.left.right = new TreeNode(4);
         head1.right.right = new TreeNode(7);
 
-        mergeTrees(head,head1);
+        mergeTrees(head, head1);
     }
 }

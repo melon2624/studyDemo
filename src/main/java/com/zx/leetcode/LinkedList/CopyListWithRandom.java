@@ -24,6 +24,7 @@ public class CopyListWithRandom {
         int value;
         Node next;
         Node random;
+
         public Node(int data) {
             this.value = data;
             this.next = null;
@@ -47,25 +48,23 @@ public class CopyListWithRandom {
         }
         return map.get(head);*/
 
-        if (head==null){
+        if (head == null) {
             return null;
         }
-        Map<Node,Node> map=new HashMap<>();
-        Node cur=head;
-        while (cur!=null){
-            map.put(cur,new Node(cur.value));
-            cur=cur.next;
+        Map<Node, Node> map = new HashMap<>();
+        Node cur = head;
+        while (cur != null) {
+            map.put(cur, new Node(cur.value));
+            cur = cur.next;
         }
-        Node newCur=head;
-        while (newCur!=null){
-            map.get(newCur).next=map.get(newCur.next);
-            map.get(newCur).random=map.get(newCur.random);
-            newCur=newCur.next;
+        Node newCur = head;
+        while (newCur != null) {
+            map.get(newCur).next = map.get(newCur.next);
+            map.get(newCur).random = map.get(newCur.random);
+            newCur = newCur.next;
         }
         return map.get(head);
     }
-
-
 
 
     public static void main(String[] args) {
@@ -77,21 +76,21 @@ public class CopyListWithRandom {
         Node node6 = new Node(6);
 
         node1.next = node2;
-        node1.random=node1;
+        node1.random = node1;
 
         node2.next = node3;
-        node2.random=node4;
+        node2.random = node4;
 
         node3.next = node4;
-        node3.random=node2;
+        node3.random = node2;
 
         node4.next = node5;
-        node4.random=node1;
+        node4.random = node1;
 
         node5.next = node6;
-        node5.random=node3;
+        node5.random = node3;
 
-        Node newNode=copyRandomList1(node1);
+        Node newNode = copyRandomList1(node1);
 
     }
 

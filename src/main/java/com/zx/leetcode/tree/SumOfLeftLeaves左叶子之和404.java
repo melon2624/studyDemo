@@ -55,14 +55,14 @@ public class SumOfLeftLeaves左叶子之和404 {
 
             TreeNode node = queue.poll();
 
-            if (node.left!=null){
-                if (isLeafNode(node.left)){
-                    ans=ans+node.left.val;
-                }else {
+            if (node.left != null) {
+                if (isLeafNode(node.left)) {
+                    ans = ans + node.left.val;
+                } else {
                     queue.add(node.left);
                 }
             }
-            if (node.right!=null){
+            if (node.right != null) {
                 if (!isLeafNode(node.right)) {
                     queue.offer(node.right);
                 }

@@ -23,50 +23,49 @@ public class FlattenBinaryTreeToLinkedList {
     }
 
     //先序遍历递归
-    public  static  Node flattern1(Node head){
-        Queue<Node> queue=new LinkedList<>();
+    public static Node flattern1(Node head) {
+        Queue<Node> queue = new LinkedList<>();
 
-            pre(head,queue);
-            Node temp=head;
-            queue.poll();
-            while (!queue.isEmpty()){
-                temp.right=queue.poll();
-                temp.left=null;
-                temp=temp.right;
-            }
-            return head;
+        pre(head, queue);
+        Node temp = head;
+        queue.poll();
+        while (!queue.isEmpty()) {
+            temp.right = queue.poll();
+            temp.left = null;
+            temp = temp.right;
+        }
+        return head;
     }
-    
 
-    public  static  void pre(Node head, Queue<Node> queue){
-            if ( head==null){
-                return;
-            }
-            else {
-                queue.add(head);
-                pre(head.left,queue);
-                pre(head.right,queue);
-            }
+
+    public static void pre(Node head, Queue<Node> queue) {
+        if (head == null) {
+            return;
+        } else {
+            queue.add(head);
+            pre(head.left, queue);
+            pre(head.right, queue);
+        }
     }
-    
+
     //迭代
-    public  static  Node  flattern2(Node head){
-            Node newHead =head;
-            while (newHead!=null){
-                if (newHead.left!=null){
-                    Node preLeft=newHead.left;
-                    while (preLeft.right!=null){
-                        preLeft=preLeft.right;
-                    }
-                    preLeft.right=newHead.right;
-                    newHead.right=newHead.left;
-                    newHead.left=null;
-                    newHead=newHead.right;
-                }else {
-                    newHead=newHead.right;
+    public static Node flattern2(Node head) {
+        Node newHead = head;
+        while (newHead != null) {
+            if (newHead.left != null) {
+                Node preLeft = newHead.left;
+                while (preLeft.right != null) {
+                    preLeft = preLeft.right;
                 }
+                preLeft.right = newHead.right;
+                newHead.right = newHead.left;
+                newHead.left = null;
+                newHead = newHead.right;
+            } else {
+                newHead = newHead.right;
             }
-            return head;
+        }
+        return head;
     }
 
 
@@ -85,10 +84,10 @@ public class FlattenBinaryTreeToLinkedList {
                 preLeft = preLeft.right;
             }
             preLeft.right = right;
-            head.left=null;
-            head.right=left;
-        }else {
-            head.left=null;
+            head.left = null;
+            head.right = left;
+        } else {
+            head.left = null;
             head.right = right;
 
         }
@@ -107,9 +106,9 @@ public class FlattenBinaryTreeToLinkedList {
 
         flattern2(head);
 
-        while (head!=null){
+        while (head != null) {
             System.out.println(head.value);
-            head=head.right;
+            head = head.right;
         }
 
     }

@@ -28,17 +28,17 @@ public class Combine组合77 {
             resultList.add(new ArrayList<>(result));
             return;
         }
-                                //n可以剪枝
+        //n可以剪枝
         for (int i = startIndex; i <= n; i++) {
             result.add(i);
-            combineHelper(n,k,i+1);
+            combineHelper(n, k, i + 1);
             result.removeLast();
         }
     }
 
     public static void main(String[] args) {
 
-        combine(4,4);
+        combine(4, 4);
         System.out.println("zx");
     }
 

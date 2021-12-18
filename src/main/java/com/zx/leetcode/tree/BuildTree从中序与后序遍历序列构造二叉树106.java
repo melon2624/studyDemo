@@ -28,10 +28,10 @@ public class BuildTree从中序与后序遍历序列构造二叉树106 {
                 break;
             }
         }
-        TreeNode left = buildTree1(inorder, inLeft, rootIndex - 1, postorder, postLeft, postLeft + (rootIndex-inLeft-1));
-        TreeNode right = buildTree1(inorder, rootIndex + 1, inRight, postorder, postLeft+(rootIndex-inLeft),postRight-1);
-        root.left=left;
-        root.right=right;
+        TreeNode left = buildTree1(inorder, inLeft, rootIndex - 1, postorder, postLeft, postLeft + (rootIndex - inLeft - 1));
+        TreeNode right = buildTree1(inorder, rootIndex + 1, inRight, postorder, postLeft + (rootIndex - inLeft), postRight - 1);
+        root.left = left;
+        root.right = right;
         return root;
     }
 

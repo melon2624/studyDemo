@@ -13,8 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class TransactionService {
 
 
-        public void test(){
-            System.out.println("transaction");
-        }
+    public void test() {
+        System.out.println("transaction");
+    }
 
 }

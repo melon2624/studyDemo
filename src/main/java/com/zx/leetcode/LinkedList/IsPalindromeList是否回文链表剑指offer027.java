@@ -3,7 +3,7 @@ package com.zx.leetcode.LinkedList;
 import java.util.Stack;
 
 /**
- *      判断链表是否回文链表
+ * 判断链表是否回文链表
  *
  * @author : zhangxin
  * @date : 2021-08-30 13:36
@@ -39,41 +39,38 @@ public class IsPalindromeList是否回文链表剑指offer027 {
     }
 
     //不使用空间，快慢指针，把后半段链表逆序
-    public static boolean isPalindrome2(ListNode head){
-            ListNode fast;
-            ListNode slow;
-            fast=head;
-            slow=head;
-            while (fast!=null&&fast.next!=null){
-                fast=fast.next.next;
-                slow=slow.next;
+    public static boolean isPalindrome2(ListNode head) {
+        ListNode fast;
+        ListNode slow;
+        fast = head;
+        slow = head;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        if (fast != null) {//奇数个
+            slow = slow.next;
+        }
+
+        ListNode pre = null;
+        ListNode next = null;
+        while (slow != null) {
+            next = slow.next;
+            slow.next = pre;
+            pre = slow;
+            slow = next;
+        }
+        ListNode cur = head;
+        while (pre != null) {
+            if (pre.val == cur.val) {
+                pre = pre.next;
+                cur = cur.next;
+            } else {
+                return false;
             }
-            if (fast!=null){//奇数个
-                slow=slow.next;
-            }
-
-                ListNode pre =null;
-                ListNode next=null;
-                while (slow!=null){
-                    next=slow.next;
-                    slow.next=pre;
-                    pre=slow;
-                    slow=next;
-                }
-                ListNode cur=head;
-                while (pre!=null){
-                    if (pre.val==cur.val){
-                        pre=pre.next;
-                        cur=cur.next;
-                    }else {
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-
-
+        }
+        return true;
+    }
 
 
     public static void main(String[] args) {

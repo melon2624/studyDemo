@@ -12,14 +12,14 @@ import java.sql.SQLException;
 @Component
 public class ConnectionUtils {
 
-    private ThreadLocal<Connection> threadLocal=new ThreadLocal<>();
+    private ThreadLocal<Connection> threadLocal = new ThreadLocal<>();
 
 
     public Connection getCurrentThreadConn() throws SQLException {
 
-        Connection connection=threadLocal.get();
-        if (connection==null){
-            connection=DruidUtils.getDruidDataSource().getConnection();
+        Connection connection = threadLocal.get();
+        if (connection == null) {
+            connection = DruidUtils.getDruidDataSource().getConnection();
             threadLocal.set(connection);
         }
 

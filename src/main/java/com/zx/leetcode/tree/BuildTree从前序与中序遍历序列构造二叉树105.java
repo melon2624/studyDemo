@@ -29,15 +29,15 @@ public class BuildTree从前序与中序遍历序列构造二叉树105 {
                 rootIndex = i;
             }
         }
-        root.left=buildTree1(preorder,preLeft+1,preLeft+(rootIndex-intLeft),inorder,intLeft,rootIndex-1);
-        root.right=buildTree1(preorder,preLeft+1+(rootIndex-intLeft),preRight,inorder,rootIndex+1,inRight);
+        root.left = buildTree1(preorder, preLeft + 1, preLeft + (rootIndex - intLeft), inorder, intLeft, rootIndex - 1);
+        root.right = buildTree1(preorder, preLeft + 1 + (rootIndex - intLeft), preRight, inorder, rootIndex + 1, inRight);
 
         return root;
     }
 
     public static void main(String[] args) {
-        int[] preorder = new int[]{3,9,20,15,7};
-        int[] inorder = {9,3,15,20,7};
+        int[] preorder = new int[]{3, 9, 20, 15, 7};
+        int[] inorder = {9, 3, 15, 20, 7};
         TreeNode node = buildTree(preorder, inorder);
     }
 

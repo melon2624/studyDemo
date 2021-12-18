@@ -7,8 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @author  zhangxin
- * @date  2021/10/13 0:04
+ * @author zhangxin
+ * @date 2021/10/13 0:04
  */
 @Data
 @TableName(value = "city")

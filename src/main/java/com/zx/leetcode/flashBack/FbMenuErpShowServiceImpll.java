@@ -10,8 +10,8 @@ import java.util.List;
  **/
 public class FbMenuErpShowServiceImpll {
 
-  static   List<List<Integer>> result = new ArrayList<>();
-  static   LinkedList<Integer> path = new LinkedList<>();
+    static List<List<Integer>> result = new ArrayList<>();
+    static LinkedList<Integer> path = new LinkedList<>();
 
     public static List<List<Integer>> combine(int n, int k) {
         combineHelper(n, k, 1);
@@ -35,7 +35,7 @@ public class FbMenuErpShowServiceImpll {
     }
 
     public static void main(String[] args) {
-            combine(4,3);
+        combine(4, 3);
     }
 }
 

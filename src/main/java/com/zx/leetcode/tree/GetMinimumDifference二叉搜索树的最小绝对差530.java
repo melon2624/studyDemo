@@ -23,7 +23,7 @@ public class GetMinimumDifference二叉搜索树的最小绝对差530 {
             if (min > x) {
                 min = x;
             }
-            pre=root;
+            pre = root;
         } else {
             pre = root;
         }

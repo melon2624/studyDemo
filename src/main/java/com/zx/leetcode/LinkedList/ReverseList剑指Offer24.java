@@ -62,17 +62,17 @@ public class ReverseList剑指Offer24 {
     //第三遍
     public static ListNode reverseList3(ListNode head) {
 
-        ListNode pre=null;
-        ListNode cur=head;
+        ListNode pre = null;
+        ListNode cur = head;
 
-        ListNode temp=null;
+        ListNode temp = null;
 
-        while (cur!=null){
+        while (cur != null) {
 
-            temp=cur.next;
-            cur.next=pre;
-            pre=cur;
-            cur=temp;
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
         }
 
         return pre;

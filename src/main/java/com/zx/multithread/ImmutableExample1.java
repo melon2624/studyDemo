@@ -9,19 +9,19 @@ import java.util.Map;
  **/
 public class ImmutableExample1 {
 
-    private  final  static  Integer a=1;
-    private final  static  Integer b=2;
-    private  final  static Map<Integer,Integer> map=new HashMap<>();
+    private final static Integer a = 1;
+    private final static Integer b = 2;
+    private final static Map<Integer, Integer> map = new HashMap<>();
 
-    static  {
-        map.put(1,1);
-        map.put(2,2);
-        map.put(3,3);
-        map.put(4,4);
+    static {
+        map.put(1, 1);
+        map.put(2, 2);
+        map.put(3, 3);
+        map.put(4, 4);
     }
 
     public static void main(String[] args) {
-            map.put(1,3);
+        map.put(1, 3);
 
         System.out.println(map.get(1));
     }
