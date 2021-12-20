@@ -9,27 +9,27 @@ import java.util.Stack;
 public class TwoStacksImplementQueue {
 
 
-    public static class TwoStacksQueue{
+    public static class TwoStacksQueue {
 
         public Stack<Integer> stackPush;
 
         public Stack<Integer> stackPop;
 
-        public  TwoStacksQueue(){
-            stackPush=new Stack<Integer>();
-            stackPop=new Stack<Integer>();
+        public TwoStacksQueue() {
+            stackPush = new Stack<Integer>();
+            stackPop = new Stack<Integer>();
         }
 
-        public  void push(Integer data){
-             stackPush.push(data);
+        public void push(Integer data) {
+            stackPush.push(data);
         }
 
-        public Integer  pop(){
-            if (!stackPop.empty()){
-               return stackPop.pop();
+        public Integer pop() {
+            if (!stackPop.empty()) {
+                return stackPop.pop();
             }
 
-            while (!stackPush.empty()){
+            while (!stackPush.empty()) {
                 stackPop.push(stackPush.pop());
             }
 
@@ -42,7 +42,7 @@ public class TwoStacksImplementQueue {
 
     public static void main(String[] args) {
 
-        TwoStacksQueue stacksQueue=new TwoStacksQueue();
+        TwoStacksQueue stacksQueue = new TwoStacksQueue();
 
         stacksQueue.push(1);
         stacksQueue.push(2);
@@ -50,7 +50,7 @@ public class TwoStacksImplementQueue {
         stacksQueue.push(4);
         stacksQueue.push(5);
         stacksQueue.push(6);
-        while (!stacksQueue.stackPop.empty()||!stacksQueue.stackPush.empty()){
+        while (!stacksQueue.stackPop.empty() || !stacksQueue.stackPush.empty()) {
             System.out.print(stacksQueue.pop());
         }
 

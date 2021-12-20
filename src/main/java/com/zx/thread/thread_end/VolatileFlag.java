@@ -12,17 +12,17 @@ public class VolatileFlag {
 
     public static void main(String[] args) {
 
-        Thread t=new Thread(()->{
-            long i=0L;
-            while (running){
-            i++;
+        Thread t = new Thread(() -> {
+            long i = 0L;
+            while (running) {
+                i++;
             }
-            System.out.println("end and i= "+ i);
+            System.out.println("end and i= " + i);
         });
         t.start();
 
         SleepHelper.sleepSecond(1);
-        running=false;
+        running = false;
 
     }
 }

@@ -16,7 +16,7 @@ public class RabbitMQConnection {
     public static Connection getConnection() throws IOException, TimeoutException {
 
         ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setVirtualHost("/consume_order_queue");
+        connectionFactory.setVirtualHost("/");
         connectionFactory.setUsername("guest");
         connectionFactory.setPassword("guest");
         connectionFactory.setHost("127.0.0.1");

@@ -23,7 +23,7 @@ public class HowToCreateThread {
         }
     }
 
-    public  static  class  Mycall implements Callable<String>{
+    public static class Mycall implements Callable<String> {
 
         @Override
         public String call() throws Exception {
@@ -32,17 +32,17 @@ public class HowToCreateThread {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-            new Mythread().start();
-            new Thread(new MyRun()).start();
+        new Mythread().start();
+        new Thread(new MyRun()).start();
 
-            new Thread(()->{
-                System.out.println("Hello Lambda !");
-            }).start();
+        new Thread(() -> {
+            System.out.println("Hello Lambda !");
+        }).start();
 
-        ExecutorService service= Executors.newCachedThreadPool();
+        ExecutorService service = Executors.newCachedThreadPool();
 
-     Future<String> future= service.submit(new Mycall());
-      String S= future.get();
+        Future<String> future = service.submit(new Mycall());
+        String S = future.get();
 
         System.out.println(S);
     }

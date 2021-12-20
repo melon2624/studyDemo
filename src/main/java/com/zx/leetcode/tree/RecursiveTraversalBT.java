@@ -28,9 +28,9 @@ public class RecursiveTraversalBT {
         pre(head.right);
     }
 
-    public  static  void  in(Node head){
+    public static void in(Node head) {
 
-        if (head==null){
+        if (head == null) {
             return;
         }
         in(head.left);
@@ -38,8 +38,8 @@ public class RecursiveTraversalBT {
         in(head.right);
     }
 
-    public  static  void  pos(Node head){
-        if (head==null){
+    public static void pos(Node head) {
+        if (head == null) {
             return;
         }
         pos(head.left);

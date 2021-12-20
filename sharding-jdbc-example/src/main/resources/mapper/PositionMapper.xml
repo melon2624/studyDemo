@@ -18,8 +18,9 @@
     <select id="getPositionDes" resultType="com.zx.vo.PositionVo">
 
 
-select p.id,p.name,p.salary,p.city,pd.description from position p left join position_detail pd on(p.id=pd.pid) where p.id=#{id}
+        select p.id,p.name,p.salary,p.city,pd.description from position p left join position_detail pd on(p.id=pd.pid)
+        where p.id=#{id}
 
-  </select>
+    </select>
 
 </mapper>

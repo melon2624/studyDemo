@@ -12,7 +12,7 @@ import java.util.concurrent.TimeoutException;
  **/
 public class Consumer {
 
-    private static  final  String QUEUE_NAME="zx_queue";
+    private static final String QUEUE_NAME = "zm_queue";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         // 1.创建连接

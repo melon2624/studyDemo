@@ -14,7 +14,7 @@ public class TestAopController {
 
 
     @PostMapping("/aop")
-    public  String  aopTest(String zx){
+    public String aopTest(String zx) {
         System.out.println("张鑫的aop");
         //int i=1/0;
         return "张鑫";

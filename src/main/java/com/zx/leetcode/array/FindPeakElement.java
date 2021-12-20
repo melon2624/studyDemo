@@ -61,7 +61,7 @@ public class FindPeakElement {
             if (nums[mid] < nums[mid + 1]) {
                 left = mid + 1;
             } else {
-                right=mid;
+                right = mid;
             }
         }
         return left;
@@ -75,7 +75,7 @@ public class FindPeakElement {
 
         int ans = findPeakElement2(nums);
 
-        int ans3=findPeakElement3(nums);
+        int ans3 = findPeakElement3(nums);
     }
 
 }

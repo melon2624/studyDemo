@@ -26,7 +26,7 @@ spring:
           key-generator:
             column: id
             type: SNOWFLAKE
- #     broadcast-tables: city
+  #     broadcast-tables: city
 
 #sharding-database
 

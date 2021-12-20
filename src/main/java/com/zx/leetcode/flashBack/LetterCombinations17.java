@@ -33,7 +33,7 @@ public class LetterCombinations17 {
     public static List<String> letterCombinations(String digits) {
 
 
-        if (!"".equals(digits)&&digits!=null){
+        if (!"".equals(digits) && digits != null) {
             letterCombinationsHelper(digits, "", 1);
         }
 

@@ -23,19 +23,19 @@ public class FindBottomLeftValue找树左下角的值513 {
 
     private static void dfs(TreeNode root, int deep) {
 
-        if (root==null){
+        if (root == null) {
             return;
         }
 
-        if (root.left==null&&root.right==null){//此时为子节点
-            if (deep>mexDept){//比前面深度大的时候记录下来
-                maxValue=root.val;
-                mexDept=deep;
+        if (root.left == null && root.right == null) {//此时为子节点
+            if (deep > mexDept) {//比前面深度大的时候记录下来
+                maxValue = root.val;
+                mexDept = deep;
             }
         }
         //隐藏着回溯
-        dfs(root.left,deep+1);
-        dfs(root.right,deep+1);
+        dfs(root.left, deep + 1);
+        dfs(root.right, deep + 1);
     }
 
     //层序遍历找左下角的值

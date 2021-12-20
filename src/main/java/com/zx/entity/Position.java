@@ -1,8 +1,8 @@
 package com.zx.entity;
 
 /**
- * @author  zhangxin
- * @date  2021/10/11 1:20
+ * @author zhangxin
+ * @date 2021/10/11 1:20
  */
 public class Position {
     private Long id;

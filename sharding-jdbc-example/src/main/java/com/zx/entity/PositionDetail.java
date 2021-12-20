@@ -6,9 +6,9 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 
 /**
-* @author : zhangxin
-* @date : 2021-10-12 15:44
-**/
+ * @author : zhangxin
+ * @date : 2021-10-12 15:44
+ **/
 @TableName(value = "position_detail")
 public class PositionDetail {
     @TableId(value = "Id", type = IdType.AUTO)

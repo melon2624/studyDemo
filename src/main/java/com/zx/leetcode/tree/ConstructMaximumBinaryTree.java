@@ -44,8 +44,8 @@ public class ConstructMaximumBinaryTree {
 
         TreeNode root = new TreeNode(nums[maxIndex]);
 
-        root.left=constructMaximumBinaryTree(nums,left,maxIndex-1);
-        root.right=constructMaximumBinaryTree(nums,maxIndex+1,right);
+        root.left = constructMaximumBinaryTree(nums, left, maxIndex - 1);
+        root.right = constructMaximumBinaryTree(nums, maxIndex + 1, right);
 
         return root;
 
@@ -57,7 +57,7 @@ public class ConstructMaximumBinaryTree {
 
         //int max= arrayMax(nums);
 
-       // constructMaximumBinaryTree(nums);
+        // constructMaximumBinaryTree(nums);
     }
 
 }

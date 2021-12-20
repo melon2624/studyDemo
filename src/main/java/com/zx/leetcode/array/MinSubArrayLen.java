@@ -73,21 +73,21 @@ public class MinSubArrayLen {
         int sublength = 0;
 
         int start = 0;
-        int end=0;
+        int end = 0;
 
-        for (; end < nums.length;end++ ) {
-                sum=sum+nums[end];
-            while (sum>=target){
-                    sublength=end-start+1;
-                    result= result>sublength?sublength:result;
+        for (; end < nums.length; end++) {
+            sum = sum + nums[end];
+            while (sum >= target) {
+                sublength = end - start + 1;
+                result = result > sublength ? sublength : result;
 
-                        sum=sum-nums[start];
-                        start++;
-                }
+                sum = sum - nums[start];
+                start++;
+            }
 
         }
 
-        return result==Integer.MAX_VALUE? 0:(result);
+        return result == Integer.MAX_VALUE ? 0 : (result);
 
     }
 
@@ -99,7 +99,7 @@ public class MinSubArrayLen {
 
         int ans2 = minSubArrayLen2(4, nums);
 
-        int ans3= minSubArrayLen3(4, nums);
+        int ans3 = minSubArrayLen3(4, nums);
 
     }
 

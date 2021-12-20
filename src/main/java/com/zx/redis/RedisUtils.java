@@ -19,17 +19,17 @@ public class RedisUtils {
     private StringRedisTemplate redisTemplate;
 
 
-    public  void  setString(String key,String value){
+    public void setString(String key, String value) {
 
-        setString(key,value,null);
+        setString(key, value, null);
     }
 
 
-    public  void setString(String key,String value,Long timeout){
+    public void setString(String key, String value, Long timeout) {
 
-        redisTemplate.opsForValue().set(key,value);
-        if (timeout!=null){
-            redisTemplate.expire(key,timeout, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(key, value);
+        if (timeout != null) {
+            redisTemplate.expire(key, timeout, TimeUnit.SECONDS);
         }
 
     }

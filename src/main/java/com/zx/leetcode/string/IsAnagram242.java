@@ -30,21 +30,21 @@ public class IsAnagram242 {
     //用26大小的字符数组去记录每个字符出现的次数
     public static boolean isAnagram2(String s, String t) {
 
-       int[] sCounts=new int[26];
-       int[] tCounts=new int[26];
-       for(char ch: s.toCharArray()){
-           sCounts[ch-'a']++;
-       }
+        int[] sCounts = new int[26];
+        int[] tCounts = new int[26];
+        for (char ch : s.toCharArray()) {
+            sCounts[ch - 'a']++;
+        }
 
-       for (char ch: t.toCharArray()){
-           tCounts[ch-'a']++;
-       }
+        for (char ch : t.toCharArray()) {
+            tCounts[ch - 'a']++;
+        }
 
-       for (int i=0;i<26;i++){
-           if (tCounts[i]!=sCounts[i]){
-               return false;
-           }
-       }
+        for (int i = 0; i < 26; i++) {
+            if (tCounts[i] != sCounts[i]) {
+                return false;
+            }
+        }
         return true;
     }
 
@@ -53,9 +53,9 @@ public class IsAnagram242 {
         String t = "zhangmiao";
         isAnagram(s, t);*/
 
-         String s = "zhangxin";
+        String s = "zhangxin";
         String t = "zhanginx";
-      boolean aaa=  isAnagram2(s, t);
+        boolean aaa = isAnagram2(s, t);
         System.out.println(aaa);
     }
 

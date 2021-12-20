@@ -69,7 +69,7 @@ public class ThreadState {
             System.out.println("t4 得到了锁");
         });
 
-        new Thread(()->{
+        new Thread(() -> {
             lock.lock();
             SleepHelper.sleepSecond(5);
             lock.unlock();
@@ -77,7 +77,7 @@ public class ThreadState {
         SleepHelper.sleepSecond(1);
         t4.start();
         SleepHelper.sleepSecond(1);
-        System.out.println("7 "+t4.getState());
+        System.out.println("7 " + t4.getState());
 
     }
 }

@@ -36,10 +36,10 @@ public class ProxyFactory {
                         try {
                             // 开启事务(关闭事务的自动提交)
                             transactionManager.beginTransaction();
-                            result =method.invoke(obj,args);
+                            result = method.invoke(obj, args);
                             // 提交事务
                             transactionManager.commit();
-                        }catch (Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
                             // 回滚事务
                             transactionManager.rollback();
@@ -55,7 +55,7 @@ public class ProxyFactory {
     }
 
 
-    public Object getCglibProxy(Object object){
+    public Object getCglibProxy(Object object) {
 
         return null;
     }

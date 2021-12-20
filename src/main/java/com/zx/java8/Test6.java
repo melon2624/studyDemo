@@ -6,7 +6,7 @@ package com.zx.java8;
  */
 public class Test6 {
 
-    public void fun(){
+    public void fun() {
         System.out.println("zx");
         System.out.println("zxxxx");
     }

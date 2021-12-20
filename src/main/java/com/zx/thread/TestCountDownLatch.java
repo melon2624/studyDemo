@@ -13,7 +13,7 @@ public class TestCountDownLatch {
 
         CountDownLatch latch=new CountDownLatch(threads.length);
 */
-        Thread t= new Thread(()->{
+        Thread t = new Thread(() -> {
             System.out.println("start 111");
             SleepHelper.sleepSecond(1);
             System.out.println("end   ");

@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- *  429.N叉树的层序遍历
+ * 429.N叉树的层序遍历
+ *
  * @author : zhangxin
  * @date : 2021-11-03 20:04
  **/
@@ -31,7 +32,7 @@ public class MultiTreeLevelOrder429 {
 
     public static List<List<Integer>> levelOrder(Node root) {
 
-        List<List<Integer>> result=new ArrayList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
         if (root == null) {
             return null;
@@ -44,12 +45,12 @@ public class MultiTreeLevelOrder429 {
 
             int size = queue.size();
 
-            List<Integer> list=new ArrayList<>();
+            List<Integer> list = new ArrayList<>();
 
-            for (int i=0;i<size;i++){
-                Node node= queue.poll();
+            for (int i = 0; i < size; i++) {
+                Node node = queue.poll();
                 list.add(node.val);
-                for (Node node1: node.children){
+                for (Node node1 : node.children) {
                     queue.add(node1);
                 }
             }

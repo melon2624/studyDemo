@@ -26,9 +26,13 @@ public class Account {
         this.money = money;
     }
 
-    public String getCardNo() { return cardNo; }
+    public String getCardNo() {
+        return cardNo;
+    }
 
-    public void setCardNo(String cardNo) { this.cardNo = cardNo;}
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
+    }
 
     @Override
     public String toString() {

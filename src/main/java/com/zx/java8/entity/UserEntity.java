@@ -44,7 +44,7 @@ public class UserEntity {
     @Override
     public boolean equals(Object o) {
         if (o instanceof UserEntity)
-       return userName.equals(((UserEntity)o).userName)&&age==((UserEntity)o).age;
+            return userName.equals(((UserEntity) o).userName) && age == ((UserEntity) o).age;
         else return false;
     }
 

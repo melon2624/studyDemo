@@ -4,12 +4,14 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+
 import java.util.Date;
+
 import lombok.Data;
 
 /**
- * @author  zhangxin
- * @date  2021/10/13 0:43
+ * @author zhangxin
+ * @date 2021/10/13 0:43
  */
 @Data
 @TableName(value = "b_order")

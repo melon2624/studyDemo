@@ -26,7 +26,7 @@ public class TransferServiceImpl implements TransferService {
         to.setMoney(money);
 
         accountDao.updateAccountByCardNo(from);
-       // int i=1/0;
+        // int i=1/0;
         accountDao.updateAccountByCardNo(to);
 
     }
