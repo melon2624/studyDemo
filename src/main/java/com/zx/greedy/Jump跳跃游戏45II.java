@@ -20,6 +20,7 @@ public class Jump跳跃游戏45II {
 
         int curDistance = 0;
         int count = 0;
+
         int nextDistance;
       /*  for (int i = 0; i < nums.length; i++) {
 
