@@ -1,4 +1,4 @@
-package com.zx.MQ.rabbitmq;
+package com.zx;
 
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyMessageListener {
 
-    @RabbitListener(queues = "queue.boot")
+  /*  @RabbitListener(queues = "queue.boot")
     public void getMyMessage(@Payload String message, @Header(name = "hello") String value, Channel channel) {
         System.out.println(message);
         System.out.println("hello = " + value);
@@ -23,5 +23,5 @@ public class MyMessageListener {
 //        channel.basicAck();
 //        // 拒收消息
 //        channel.basicReject();
-    }
+    }*/
 }

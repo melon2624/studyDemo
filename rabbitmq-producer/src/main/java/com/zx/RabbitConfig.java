@@ -1,4 +1,4 @@
-package com.zx.MQ.rabbitmq;
+package com.zx;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.Exchange;
@@ -34,6 +34,7 @@ public class RabbitConfig {
                 null);
     }
 
+    @Bean
     public Binding binding() {
 
         return new Binding("queue.boot",
