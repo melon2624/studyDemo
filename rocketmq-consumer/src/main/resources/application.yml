@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: rocketmq-consumer
+# rocketmq的nameserver地址
+rocketmq:
+  name-server: localhost:9876
+#  # 指定生产组名称
+#  producer:
+#    group: group1

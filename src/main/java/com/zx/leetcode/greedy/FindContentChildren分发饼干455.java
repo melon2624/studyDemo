@@ -1,4 +1,4 @@
-package com.zx.greedy;
+package com.zx.leetcode.greedy;
 
 import java.util.Arrays;
 

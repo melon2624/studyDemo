@@ -1,4 +1,4 @@
-package com.zx.greedy;
+package com.zx.leetcode.greedy;
 
 /**
  * 跳跃游戏45II
