@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.TblOrderEventMapper">
+  <resultMap id="BaseResultMap" type="com.zx.entity.TblOrderEvent">
+    <!--@mbg.generated generated on Thu Jan 13 02:01:45 CST 2022.-->
+    <!--@Table tbl_order_event-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="orderType" jdbcType="VARCHAR" property="ordertype" />
+    <result column="process" jdbcType="VARCHAR" property="process" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Jan 13 02:01:45 CST 2022.-->
+    id, orderType, `process`, content, createTime, updateTime
+  </sql>
+</mapper>
