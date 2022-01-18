@@ -99,58 +99,39 @@ class Solution {
 
     }*/
 
-    public static void main(String[] args) throws ParseException {
-   /*  String aaa=   DateUtils.getCurrentTime("yyyyMMddHHmmss");
-        System.out.println(aaa);
-        String time =String.valueOf( System.currentTimeMillis());
-        System.out.println(time);
-       String neTime=  DateUtils.format("yyyyMMddHHmmss", "yyyy-MM-dd HH:mm", aaa);
-        System.out.println(neTime);
-        Integer a=Integer.parseInt("03");
-        System.out.println(a);
-        int a1=Integer.parseInt("20211221");
-        System.out.println(a1);
-       int aaaaa= Integer.parseInt(DateUtils.getCurrentTime("HH"));
-        System.out.println(aaaaa);*/
-        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMdd");
+    public static void test2(String[] args) throws ParseException {
+        String a = "测试组/hkl001/zhanxgin54/zxxx/zx";
 
-      /*  for (int i = 0; i <= 7; i++) {
-            Calendar c = Calendar.getInstance();
-            String time = sf.format(c.getTime());
-            //   System.out.println("当前日期:"+sf.format(c.getTime()));
-            c.add(Calendar.DAY_OF_MONTH, i);
-            // System.out.println("增加一天后日期:"+sf.format(c.getTime()));
-        }*/
-        //  int dateDay = Integer.parseInt(date) + i;
-        //
-      /*  SimpleDateFormat formatter = new SimpleDateFormat("yyyyMM");//格式化为2017-10
-        Date month = formatter.parse("202202");
-        Calendar calendar = Calendar.getInstance();//得到Calendar实例
-        calendar.setTime(month);
-        calendar.add(Calendar.MONTH, -1);//把月份减三个月
-        Date starDate = calendar.getTime();//得到时间赋给Data
-        String stringDate = formatter.format(starDate);//使用格式化Data
-        System.out.println(stringDate);*/
-    /*    String a = " hello";
-        String b = "world";
-        String c = "zhangxin";
+        String[] split = a.split("/");
+
         List<String> list = new ArrayList<>();
-        list.add(a);
-        list.add(b);
-        list.add(c);
-        StringBuilder builder = new StringBuilder();
-        for (String s : list) {
-            builder.append(s+"\n");
-        }
-        System.out.println(builder.toString());*/
-        String a = "22";
-        String b = "21";
 
-     int c= a.compareTo(b);
-        System.out.println(c);
+        Collections.addAll(list, split);
 
-        String time = DateUtils.addHourToDate(Integer.parseInt("2"), DateUtils.getCurrentDate("yyyyMMddHHmmss"), "HH:mm");//当前时间+提前时间
+        BigDecimal time = new BigDecimal(0);
+        time = time.add(new BigDecimal("0"));
+
         System.out.println(time);
+        List<String> aaa = null;
+        for (String b : aaa) {
+            System.out.println(b);
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        String a = "zhangxin";
+
+        byte g = 'b';
+        System.out.println(g);
+        char h = (char) g;
+        int j = 'a';
+        char i = 85;
+        System.out.println(j);
+
+        System.out.println(h);
+        System.out.println(i);
     }
 
 
