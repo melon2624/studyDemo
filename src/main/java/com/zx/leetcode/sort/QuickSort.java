@@ -11,7 +11,7 @@ public class QuickSort {
         if (left >= right) {
             return;
         }
-        int partitionIndex = partition1(arr, left, right);
+        int partitionIndex = partition2(arr, left, right);
         quickSort(arr, left, partitionIndex - 1);
         quickSort(arr, partitionIndex + 1, right);
     }
@@ -19,18 +19,15 @@ public class QuickSort {
     public static int partition1(int[] arr, int left, int right) {
 
         int privot = arr[left];//取第一个为privot
-
         while (left < right) {
             //从右往左遍历，遇到比privot的righ向左移动，遇到的放到左边去，此时rigth值所在处是空的，
             // 然后再从左往右遍历找到一个比privot大的放到右边 以此循环知道left=right
             while (left < right && arr[right] > privot) {
                 right--;
             }
-
             if (left < right) {
                 arr[left] = arr[right];
             }
-
             while (left < right && arr[left] < privot) {
                 left++;
             }
@@ -39,6 +36,37 @@ public class QuickSort {
             }
         }
         arr[left] = privot;
+        return left;
+    }
+
+    //快速排序第二次code
+    public static int partition2(int[] arr, int left, int right) {
+
+        int privot = arr[left];
+        while (left < right) {
+
+            while (left < right) {
+                if (arr[right] > privot) {
+                    right--;
+                } else {
+                    arr[left] = arr[right];
+                    left++;
+                    break;
+                }
+            }
+
+            while (left < right) {
+                if (arr[left] < privot) {
+                    left++;
+                } else {
+                    arr[right] = arr[left];
+                    right--;
+                    break;
+                }
+            }
+        }
+        arr[left] = privot;
+
         return left;
     }
 
