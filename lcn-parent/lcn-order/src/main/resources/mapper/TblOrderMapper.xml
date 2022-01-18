@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zx.mapper.TblOrderMapper">
+  <resultMap id="BaseResultMap" type="com.zx.entity.TblOrder">
+    <!--@mbg.generated generated on Sat Jan 15 20:53:46 CST 2022.-->
+    <!--@Table tbl_order-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="order_name" jdbcType="VARCHAR" property="orderName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sat Jan 15 20:53:46 CST 2022.-->
+    id, order_name
+  </sql>
+</mapper>

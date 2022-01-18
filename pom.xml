@@ -8,6 +8,9 @@
     <version>0.0.1-SNAPSHOT</version>
     <modules>
         <module>sharding-jdbc-example</module>
+        <module>lcn-parent</module>
+        <module>lcn-parent</module>
+        <module>lcn-parent</module>
     </modules>
 
     <name>study</name>
