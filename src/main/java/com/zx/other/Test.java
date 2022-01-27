@@ -121,19 +121,31 @@ class Solution {
 
     public static void main(String[] args) {
 
-        String a = "zhangxin";
+        StringBuilder stringBuilder = new StringBuilder();
 
-        byte g = 'b';
+        List<Integer> list = new ArrayList<>();
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        for (Integer s : list) {
+            stringBuilder.append(s + ",");
+        }
+        System.out.println(stringBuilder.toString());
+        String string = stringBuilder.toString();
+
+        String qqq = string.substring(0, string.length() - 1);
+        System.out.println(qqq);
+      /*  byte g = 'b';
         System.out.println(g);
         char h = (char) g;
         int j = 'a';
         char i = 85;
         System.out.println(j);
-
         System.out.println(h);
-        System.out.println(i);
+        System.out.println(i);*/
     }
-
 
     public static void set() {
         TreeSet<Integer> hs = new TreeSet<>();
