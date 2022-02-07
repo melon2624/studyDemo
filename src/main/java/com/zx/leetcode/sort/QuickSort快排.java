@@ -4,7 +4,7 @@ package com.zx.leetcode.sort;
  * @author : zhangxin
  * @date : 2021-11-08 10:27
  **/
-public class QuickSort {
+public class QuickSort快排 {
 
     public static void quickSort(int[] arr, int left, int right) {
 

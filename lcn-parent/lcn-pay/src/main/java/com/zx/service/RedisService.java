@@ -8,6 +8,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.nio.channels.Selector;
+
 /**
  * @author zhangxin
  * @date 2022-01-16 22:57
@@ -25,6 +27,7 @@ public class RedisService {
         BoundValueOperations<String, String> pay = redisTemplate.boundValueOps("pay");
         pay.set("pay-value");
         //int i = 1 / 0;
+
         return "新增支付成功";
     }
 

@@ -4,7 +4,7 @@ package com.zx.leetcode.sort;
  * @author : zhangxin
  * @date : 2021-08-23 10:45
  **/
-public class MergeSort {
+public class MergeSort归并排序 {
 
 
     public static void mergesort(int[] arr, int L, int R) {
