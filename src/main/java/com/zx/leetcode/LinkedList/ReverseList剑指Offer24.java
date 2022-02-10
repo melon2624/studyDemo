@@ -78,10 +78,56 @@ public class ReverseList剑指Offer24 {
         return pre;
     }
 
-    //递归操作
+    //非递归操作第四遍
+    public static ListNode reverseList44(ListNode head) {
+
+        if (head == null) {
+            return null;
+        }
+
+        ListNode pre = null;
+        ListNode next = null;
+        ListNode cur = head;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
+    public static ListNode reverseList55(ListNode a, ListNode b) {
+
+        ListNode pre=null;
+        ListNode cur=a;
+        ListNode temp=null;
+
+        while (cur!=b){
+            temp=cur.next;
+            cur.next=pre;
+            pre=cur;
+            cur=temp;
+        }
+        b.next=pre;
+        return b;
+
+    }
+
+
+    //递归第一遍操作
     public static ListNode reverseList4(ListNode head) {
 
-        return null;
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        //  给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
+        ListNode newHead = reverseList4(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
     }
 
 
@@ -97,7 +143,9 @@ public class ReverseList剑指Offer24 {
         node3.next = node4;
         node4.next = node5;
 
-        ListNode node = reverseList2(node1);
+      //  ListNode node = reverseList44(node1);
+
+        ListNode node=reverseList55(node1,node4);
     }
 
     //给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表
