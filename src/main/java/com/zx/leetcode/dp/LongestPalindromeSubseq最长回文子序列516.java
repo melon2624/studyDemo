@@ -4,7 +4,7 @@ package com.zx.leetcode.dp;
  * @author : xkdtm
  * @date : 2022-01-27 16:53
  **/
-public class LongestPalindromeSubseq {
+public class LongestPalindromeSubseq最长回文子序列516 {
 
     public static int longestPalindromeSubseq(String s) {
 
@@ -28,7 +28,6 @@ public class LongestPalindromeSubseq {
                     }
                 }
             }
-
         }
         return dp[0][s.length()-1];
     }

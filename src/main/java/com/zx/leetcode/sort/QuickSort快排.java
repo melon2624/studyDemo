@@ -16,6 +16,18 @@ public class QuickSort快排 {
         quickSort(arr, partitionIndex + 1, right);
     }
 
+    public static void quickSort3(int[] arr, int left, int right) {
+
+        if (left >= right) {
+            return;
+        }
+        int partitionIndex = partition3(arr, left, right);
+        quickSort3(arr, left, partitionIndex - 1);
+        quickSort3(arr, partitionIndex + 1, right);
+
+    }
+
+
     public static int partition1(int[] arr, int left, int right) {
 
         int privot = arr[left];//取第一个为privot
@@ -70,6 +82,36 @@ public class QuickSort快排 {
         return left;
     }
 
+    public static int partition3(int[] arr, int left, int right) {
+
+        int temp = arr[left];
+
+        while (left < right) {
+
+            while (left < right) {
+                if (arr[right] > temp) {
+                    right--;
+                } else {
+                    arr[left] = arr[right];
+                    left++;
+                    break;
+                }
+            }
+
+            while (left < right) {
+                if (arr[left] < temp) {
+                    left++;
+                } else {
+                    arr[right] = arr[left];
+                    right++;
+                    break;
+                }
+            }
+        }
+        arr[left] = temp;
+        return left;
+    }
+
 
     public static void main(String[] args) {
 
@@ -78,7 +120,7 @@ public class QuickSort快排 {
         String a = "2021110820211110";
         String b = a.substring(8);
 
-        quickSort(arr, 0, arr.length - 1);
+        quickSort3(arr, 0, arr.length - 1);
 
     }
 
