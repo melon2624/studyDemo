@@ -6,7 +6,7 @@ import java.util.Stack;
  * @author : zhangxin
  * @date : 2021-08-26 10:49
  **/
-public class GetMinStack {
+public class GetMinStack最小栈155 {
 
     public static class Mystack {
 

@@ -19,11 +19,29 @@ public class Combine组合77 {
     static List<List<Integer>> resultList = new ArrayList<>();
 
     public static List<List<Integer>> combine(int n, int k) {
-        combineHelper(n, k, 1);
+        combineHelper2(n, k, 1);
         return resultList;
     }
 
-    public static void combineHelper(int n, int k, int startIndex) {
+    public static void combineHelper2(int n, int k, int begin) {
+
+        if (result.size() == k) {
+            resultList.add(new LinkedList<>(result));
+        }
+
+        for (int i=begin;i<=n;i++){
+
+            result.add(i);
+            combineHelper2(n,k,i+1);
+            result.remove(result.size()-1);
+
+
+        }
+
+    }
+
+
+   /* public static void combineHelper(int n, int k, int startIndex) {
         if (result.size() == k) {
             resultList.add(new ArrayList<>(result));
             return;
@@ -34,11 +52,12 @@ public class Combine组合77 {
             combineHelper(n, k, i + 1);
             result.removeLast();
         }
-    }
+    }*/
+
 
     public static void main(String[] args) {
 
-        combine(4, 4);
+        combine(4, 2);
         System.out.println("zx");
     }
 

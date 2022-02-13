@@ -9,6 +9,9 @@ import java.util.Stack;
 public class TwoStacksImplementQueue {
 
 
+
+
+
     public static class TwoStacksQueue {
 
         public Stack<Integer> stackPush;

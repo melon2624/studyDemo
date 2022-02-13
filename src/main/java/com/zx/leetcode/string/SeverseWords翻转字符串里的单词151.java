@@ -7,7 +7,7 @@ import java.util.Deque;
  * @author zhangxin
  * @date 2022-02-07 4:25
  */
-public class SeverseWords {
+public class SeverseWords翻转字符串里的单词151 {
 
     public static String reverseWords(String s) {
         int left = 0, right = s.length() - 1;
