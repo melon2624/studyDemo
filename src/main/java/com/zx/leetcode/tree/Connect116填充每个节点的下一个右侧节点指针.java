@@ -9,7 +9,7 @@ import java.util.Queue;
  * @author : zhangxin
  * @date : 2021-11-04 11:12
  **/
-public class Connect116117 {
+public class Connect116填充每个节点的下一个右侧节点指针 {
 
     public static class Node {
 
@@ -28,6 +28,44 @@ public class Connect116117 {
             right = _right;
             next = _next;
         }
+    }
+
+
+    public static Node connect2(Node root) {
+
+        if (root == null) {
+            return root;
+        }
+
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            int size = queue.size();
+
+            while (size > 0) {
+
+                Node node = queue.poll();
+
+                if (size == 1) {
+                    node.next = null;
+                } else {
+                    node.next = queue.peek();
+                }
+
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+                size--;
+            }
+        }
+
+        return root;
     }
 
 

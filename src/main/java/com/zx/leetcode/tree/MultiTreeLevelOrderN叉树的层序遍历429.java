@@ -11,7 +11,7 @@ import java.util.Queue;
  * @author : zhangxin
  * @date : 2021-11-03 20:04
  **/
-public class MultiTreeLevelOrder429 {
+public class MultiTreeLevelOrderN叉树的层序遍历429 {
 
     public static class Node {
         public int val;
@@ -37,16 +37,12 @@ public class MultiTreeLevelOrder429 {
         if (root == null) {
             return null;
         }
-
         Queue<Node> queue = new LinkedList();
         queue.add(root);
 
         while (!queue.isEmpty()) {
-
             int size = queue.size();
-
             List<Integer> list = new ArrayList<>();
-
             for (int i = 0; i < size; i++) {
                 Node node = queue.poll();
                 list.add(node.val);
@@ -56,10 +52,47 @@ public class MultiTreeLevelOrder429 {
             }
             result.add(list);
         }
+        return result;
+    }
+
+
+    public static List<List<Integer>> levelOrder2(Node root) {
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        if (root == null) {
+            return result;
+        }
+        List<Integer> list = null;
+        Queue<Node> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            int size = queue.size();
+            list = new ArrayList<>();
+            while (size > 0) {
+                Node node = queue.poll();
+
+
+                list.add(node.val);
+
+                List<Node> nodeList = node.children;
+
+                for (int i = 0; i < nodeList.size(); i++) {
+                    queue.add(nodeList.get(i));
+                }
+                size--;
+            }
+            result.add(list);
+
+        }
 
         return result;
 
     }
+
 
     public static void main(String[] args) {
 
