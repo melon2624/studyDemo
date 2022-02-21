@@ -17,9 +17,28 @@ public class BinaryTreePaths二叉树的所有路径257 {
             return null;
         }
         List<String> pathList = new ArrayList<>();
-        constructPaths(root, "", pathList);
+       // constructPaths(root, "", pathList);
+        binaryTreePathHelper(root,"",pathList);
         return pathList;
     }
+
+
+    public static void binaryTreePathHelper(TreeNode root, String str, List<String> list) {
+
+        if (root .left==null&&root.right==null) {
+
+            str=str+root.val;
+
+           // str.substring(0, str.length() - 2);
+            list.add(str);
+            return;
+        }
+
+        str = str + root.val + "->";
+        binaryTreePathHelper(root.left, str, list);
+        binaryTreePathHelper(root.right, str, list);
+    }
+
 
     public static void constructPaths(TreeNode root, String path, List<String> pathList) {
 
@@ -39,6 +58,7 @@ public class BinaryTreePaths二叉树的所有路径257 {
     }
 
     //非递归遍历
+    //TODO
     public void constructPaths2(TreeNode root, String path, List<String> pathList) {
 
         return;
@@ -49,7 +69,15 @@ public class BinaryTreePaths二叉树的所有路径257 {
     // public  static  void  getDfs(TreeNode root,)
 
     public static void main(String[] args) {
+        TreeNode head = new TreeNode(1);
+        head.left = new TreeNode(2);
+        head.right = new TreeNode(3);
+        head.left.left = new TreeNode(4);
+        head.left.right = new TreeNode(5);
+        head.right.left = new TreeNode(6);
+        head.right.right = new TreeNode(7);
 
+        List<String> list=binaryTreePaths(head);
     }
 
 }

@@ -10,15 +10,53 @@ import java.util.Queue;
 public class SumOfLeftLeaves左叶子之和404 {
 
 
-    public static int SumOfLeftLeaves(TreeNode root) {
+    public static int sumOfLeftLeaves(TreeNode root) {
+
+        if (root == null) {
+            return 0;
+        }
+        return dfs(root);
+    }
+
+    public static int sumOfLeftLeaves2(TreeNode root) {
 
         if (root == null) {
             return 0;
         }
 
-        return dfs(root);
+        return sumOfLeftLeavesHelper(root);
 
     }
+
+    public static int sumOfLeftLeavesHelper(TreeNode root) {
+
+        int ans = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+
+            if (node.left != null && node.left.left == null && node.left.right == null) {
+                ans = ans + node.left.val;
+              //  queue.add(node.left);
+            }
+
+            if (node.left!=null){
+                queue.add(node.left);
+            }
+
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+
+        }
+
+        return ans;
+
+    }
+
 
     //深度优先
     public static int dfs(TreeNode root) {
@@ -80,5 +118,20 @@ public class SumOfLeftLeaves左叶子之和404 {
         }
         return false;
     }
+
+
+    public static void main(String[] args) {
+        TreeNode head = new TreeNode(1);
+        head.left = new TreeNode(2);
+        head.right = new TreeNode(3);
+        head.left.left = new TreeNode(4);
+        head.left.right = new TreeNode(5);
+     /*   head.right.left = new TreeNode(15);
+        head.right.right = new TreeNode(7);*/
+
+        int ans = sumOfLeftLeaves2(head);
+
+    }
+
 
 }

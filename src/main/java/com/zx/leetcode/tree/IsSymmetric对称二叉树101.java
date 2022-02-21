@@ -6,7 +6,7 @@ package com.zx.leetcode.tree;
  * @author : zhangxin
  * @date : 2021-11-05 17:42
  **/
-public class IsSymmetric101 {
+public class IsSymmetric对称二叉树101 {
 
 
     public static boolean dfc(TreeNode left, TreeNode right) {
@@ -24,6 +24,26 @@ public class IsSymmetric101 {
         }
 
         return dfc(left.left, right.right) && dfc(left.right, right.left);
+
+    }
+
+
+    public static boolean dfc2(TreeNode left, TreeNode right) {
+
+        if (left == null && right == null) {
+
+            return true;
+        }else if (left==null&&right!=null){
+            return false;
+        }else if (left!=null&&right==null){
+            return false;
+        }
+
+        if (left.val!=right.val){
+            return false;
+        }
+
+        return  dfc2(left.left,right.right)&&dfc2(left.right,right.left);
 
     }
 

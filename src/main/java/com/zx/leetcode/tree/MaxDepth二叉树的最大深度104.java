@@ -9,7 +9,7 @@ import java.util.Queue;
  * @author : zhangxin
  * @date : 2021-11-03 20:19
  **/
-public class MaxDepth104 {
+public class MaxDepth二叉树的最大深度104 {
 
 
     //递归
@@ -21,6 +21,18 @@ public class MaxDepth104 {
         int maxLeftHeigt = maxDepth(root.left);
         int maxRightHeigt = maxDepth(root.right);
         return maxLeftHeigt > maxRightHeigt ? maxLeftHeigt + 1 : maxRightHeigt + 1;
+    }
+
+    //第二遍
+    public int maxDepth3(TreeNode root) {
+
+        if (root == null) {
+            return 0;
+        }
+        int leftDepth = maxDepth3(root.left);
+        int rightDepth = maxDepth3(root.right);
+
+        return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
     }
 
 
