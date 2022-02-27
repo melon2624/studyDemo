@@ -15,7 +15,7 @@ import java.util.Map;
  * @author : zhangxin
  * @date : 2021-11-22 19:18
  **/
-public class LetterCombinations17 {
+public class LetterCombinations电话号码的字母组合17 {
 
     static Map<Character, String> phoneMap = new HashMap<Character, String>() {{
         put('2', "abc");
@@ -32,13 +32,44 @@ public class LetterCombinations17 {
 
     public static List<String> letterCombinations(String digits) {
 
-
         if (!"".equals(digits) && digits != null) {
             letterCombinationsHelper(digits, "", 1);
         }
 
         return resultList;
     }
+
+    //第二遍
+    public static List<String> letterCombinations2(String digits) {
+
+        if ("".equals(digits) || digits == null) {
+            return resultList;
+        }
+        letterCombinationsHelper2(digits, "", 0);
+
+
+        return resultList;
+
+    }
+
+    private static void letterCombinationsHelper2(String digits, String targetString, int startIndex) {
+
+
+        if (targetString.length() == digits.length()) {
+            resultList.add(targetString.toString());
+            return;
+        }
+
+        String currentKey = phoneMap.get(digits.charAt(startIndex));
+        char[] currentChar = currentKey.toCharArray();
+        for (int i = 0; i < currentChar.length; i++) {
+            StringBuilder newtarget = new StringBuilder(targetString).append(currentChar[i]);
+            letterCombinationsHelper2(digits, newtarget.toString(), startIndex + 1);
+        }
+
+
+    }
+
 
     public static void letterCombinationsHelper(String digits, String targetString, int startIndex) {
         if (targetString.length() == digits.length()) {
@@ -54,6 +85,6 @@ public class LetterCombinations17 {
     }
 
     public static void main(String[] args) {
-        List reslut = letterCombinations("");
+        List reslut = letterCombinations2("");
     }
 }

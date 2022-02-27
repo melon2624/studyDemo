@@ -11,6 +11,7 @@
         <module>lcn-parent</module>
         <module>lcn-parent</module>
         <module>lcn-parent</module>
+        <module>seata-all</module>
     </modules>
 
     <name>study</name>
