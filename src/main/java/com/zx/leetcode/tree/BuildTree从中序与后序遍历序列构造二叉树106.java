@@ -8,7 +8,7 @@ public class BuildTree从中序与后序遍历序列构造二叉树106 {
 
     //自己的写法，递归
     public static TreeNode buildTree(int[] inorder, int[] postorder) {
-        return buildTree1(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
+        return buildTree2(inorder, 0, inorder.length - 1, postorder, 0, postorder.length - 1);
     }
 
     public static TreeNode buildTree1(int[] inorder, int inLeft, int inRight, int[] postorder, int postLeft, int postRight) {
@@ -32,6 +32,33 @@ public class BuildTree从中序与后序遍历序列构造二叉树106 {
         TreeNode right = buildTree1(inorder, rootIndex + 1, inRight, postorder, postLeft + (rootIndex - inLeft), postRight - 1);
         root.left = left;
         root.right = right;
+        return root;
+    }
+
+    //第二遍
+    public static TreeNode buildTree2(int[] inorder, int inLeft, int inRight, int[] postOrder, int postLeft, int postRight) {
+
+        if (inRight - inLeft < 0) {
+            return null;
+        }
+        TreeNode root = new TreeNode(postOrder[postRight]);
+        if (inRight - inLeft == 0) {
+            return root;
+        }
+        int middle = 0;
+        for (int i = inLeft; i <= inRight; i++) {
+            if (inorder[i] == root.val) {
+                middle = i;
+                break;
+            }
+        }
+
+        TreeNode left = buildTree2(inorder, inLeft, middle - 1, postOrder, postLeft, postLeft + middle - inLeft - 1);
+        TreeNode right = buildTree2(inorder, middle + 1, inRight, postOrder, postLeft + middle - inLeft, postRight - 1);
+
+        root.left = left;
+        root.right = right;
+
         return root;
     }
 
