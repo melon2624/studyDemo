@@ -29,4 +29,8 @@ class StudyApplicationTests {
         redisUtils.setString("zx", userEntityJson);
     }
 
+
+
+
+
 }
