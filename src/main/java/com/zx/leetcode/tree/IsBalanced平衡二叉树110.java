@@ -73,6 +73,35 @@ public class IsBalanced平衡二叉树110 {
 
     }
 
+    public static boolean isBalanced3(TreeNode root) {
+
+        if (root == null) {
+            return true;
+        }
+
+        boolean leftBalance = isBalanced3(root.left);
+        boolean rightBalance = isBalanced3(root.right);
+
+        int leftHeigt = heigt2(root.left);
+        int rightHeigt = heigt2(root.right);
+
+        return leftBalance && rightBalance && Math.abs(leftHeigt - rightHeigt) <= 1;
+
+    }
+
+    public static int heigt2(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftHeigt = heigt2(root.left);
+        int rightHeigt = heigt2(root.right);
+
+        int rootHeigt = Math.max(leftHeigt, rightHeigt) + 1;
+        return rootHeigt;
+    }
+
+
     private static int heigt(TreeNode root) {
         if (root == null) {
             return 0;
@@ -82,7 +111,6 @@ public class IsBalanced平衡二叉树110 {
         int rightHeigt = heigt(root.right);
 
         int rootHeight = Math.max(leftHeigt, rightHeigt) + 1;
-
 
         return rootHeight;
     }

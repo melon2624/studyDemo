@@ -23,10 +23,32 @@ public class SumOfLeftLeaves左叶子之和404 {
         if (root == null) {
             return 0;
         }
-
         return sumOfLeftLeavesHelper(root);
-
     }
+
+
+    public static int sumOfLeftLeavesHelper2(TreeNode root) {
+
+        int ans = 0;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+
+            TreeNode node = queue.poll();
+            if (node.left != null && node.left.left == null && node.left.right == null) {
+                ans += node.left.val;
+            }
+            if (node.left != null) {
+                queue.add(node.left);
+            }
+            if (node.right != null) {
+                queue.add(node.right);
+            }
+        }
+        return ans;
+    }
+
 
     public static int sumOfLeftLeavesHelper(TreeNode root) {
 
@@ -40,10 +62,10 @@ public class SumOfLeftLeaves左叶子之和404 {
 
             if (node.left != null && node.left.left == null && node.left.right == null) {
                 ans = ans + node.left.val;
-              //  queue.add(node.left);
+                //  queue.add(node.left);
             }
 
-            if (node.left!=null){
+            if (node.left != null) {
                 queue.add(node.left);
             }
 

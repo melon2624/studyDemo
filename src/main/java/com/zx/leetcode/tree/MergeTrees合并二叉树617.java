@@ -32,6 +32,26 @@ public class MergeTrees合并二叉树617 {
 
     }
 
+
+    public static TreeNode mergeTrees2(TreeNode root1, TreeNode root2) {
+        if (root1 == null && root2 != null) {
+            return root2;
+        } else if (root1 != null && root2 == null) {
+            return root1;
+        } else if (root1 == null && root2 == null) {
+            return null;
+        } else {
+            TreeNode treeNode = new TreeNode(root1.val + root2.val);
+
+            TreeNode leftNode = mergeTrees2(root1.left, root2.left);
+            TreeNode rightNode = mergeTrees2(root1.right, root2.right);
+
+            treeNode.left = leftNode;
+            treeNode.right = rightNode;
+            return treeNode;
+        }
+    }
+
     public static void main(String[] args) {
         TreeNode head = new TreeNode(1);
         head.left = new TreeNode(3);
@@ -46,6 +66,6 @@ public class MergeTrees合并二叉树617 {
         head1.left.right = new TreeNode(4);
         head1.right.right = new TreeNode(7);
 
-        mergeTrees(head, head1);
+        TreeNode treeNode = mergeTrees2(head, head1);
     }
 }

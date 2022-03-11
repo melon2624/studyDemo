@@ -16,10 +16,45 @@ public class FindBottomLeftValue找树左下角的值513 {
 
     public static int findBottomLeftValue(TreeNode root) {
 
-        dfs(root, 1);
-        return maxValue;
+        if (root == null) {
+            return 0;
+        }
+
+      //  dfs(root, 1);
+      //  return maxValue;
+        return  findBottomLeftValueHelper(root);
 
     }
+
+    public static int findBottomLeftValueHelper(TreeNode root) {
+
+        int bottomLeftValue = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+
+            int size = queue.size();
+
+            for (int i = 0; i < size; i++) {
+                TreeNode treeNode = queue.poll();
+                if (i == 0) {
+                    bottomLeftValue = treeNode.val;
+                }
+                if (treeNode.left != null) {
+                    queue.add(treeNode.left);
+                }
+                if (treeNode.right != null) {
+                    queue.add(treeNode.right);
+                }
+            }
+
+        }
+
+        return bottomLeftValue;
+    }
+
 
     private static void dfs(TreeNode root, int deep) {
 

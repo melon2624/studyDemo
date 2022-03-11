@@ -16,7 +16,7 @@ package com.zx.leetcode.tree;
  * @author : zhangxin
  * @date : 2021-09-18 17:59
  **/
-public class ConstructMaximumBinaryTree {
+public class ConstructMaximumBinaryTree最大二叉树654 {
 
     public static int arrayMax(int[] nums, int left, int right) {
 
@@ -29,6 +29,36 @@ public class ConstructMaximumBinaryTree {
             }
         }
         return maxIndex;
+    }
+
+
+    public static int arrayMax2(int[] nums, int left, int right) {
+        int max = Integer.MIN_VALUE;
+        int maxIndex = 0;
+        for (int i = left; i <= right; i++) {
+            if (nums[i] > max) {
+                max = nums[i];
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
+    }
+
+    public static TreeNode constructMaximumBinaryTree2(int[] nums, int left, int right) {
+        if (left - right < 0) {
+            return null;
+        } else if (left == right) {
+            return new TreeNode(nums[left]);
+        } else {
+
+            int maxIndex = arrayMax2(nums, left, right);
+            TreeNode treeNode = new TreeNode(nums[maxIndex]);
+            TreeNode leftNode = constructMaximumBinaryTree2(nums, left, maxIndex - 1);
+            TreeNode rightNode = constructMaximumBinaryTree2(nums, maxIndex + 1, right);
+            treeNode.left = leftNode;
+            treeNode.right = rightNode;
+            return treeNode;
+        }
     }
 
 

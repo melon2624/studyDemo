@@ -17,19 +17,40 @@ public class BinaryTreePaths二叉树的所有路径257 {
             return null;
         }
         List<String> pathList = new ArrayList<>();
-       // constructPaths(root, "", pathList);
-        binaryTreePathHelper(root,"",pathList);
+        // constructPaths(root, "", pathList);
+        binaryTreePathHelper2(root, "", pathList);
         return pathList;
+    }
+
+    public static void binaryTreePathHelper2(TreeNode root, String str, List<String> list) {
+
+        if (root == null) {
+            //  list.add(str);
+            return;
+        }
+
+        StringBuilder stringBuilder = new StringBuilder(str);
+
+        stringBuilder.append(root.val);
+
+        if (root.left == null && root.right == null) {
+            list.add(stringBuilder.toString());
+          //  binaryTreePathHelper2(root, stringBuilder.toString(), list);
+        } else {
+            stringBuilder.append("->");
+            binaryTreePathHelper2(root.left, stringBuilder.toString(), list);
+            binaryTreePathHelper2(root.right, stringBuilder.toString(), list);
+        }
     }
 
 
     public static void binaryTreePathHelper(TreeNode root, String str, List<String> list) {
 
-        if (root .left==null&&root.right==null) {
+        if (root.left == null && root.right == null) {
 
-            str=str+root.val;
+            str = str + root.val;
 
-           // str.substring(0, str.length() - 2);
+            // str.substring(0, str.length() - 2);
             list.add(str);
             return;
         }
@@ -73,11 +94,13 @@ public class BinaryTreePaths二叉树的所有路径257 {
         head.left = new TreeNode(2);
         head.right = new TreeNode(3);
         head.left.left = new TreeNode(4);
-        head.left.right = new TreeNode(5);
+       // head.left.right = new TreeNode(5);
         head.right.left = new TreeNode(6);
         head.right.right = new TreeNode(7);
 
-        List<String> list=binaryTreePaths(head);
+        //List<String> list = binaryTreePaths(head);
+
+        List<String> list = binaryTreePaths(head);
     }
 
 }

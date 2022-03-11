@@ -148,6 +148,23 @@ public class IsValidBST验证二叉搜索树98 {
         return in2(root.right);
     }
 
+
+    public static boolean isBST5(TreeNode root) {
+
+        if (root == null) {
+            return true;
+        }
+        if (!isBST5(root.left)) {
+            return false;
+        }
+        if (root.val > pre) {
+            return false;
+        }
+        pre = root.val;
+        return isBST5(root.right);
+    }
+
+
     public static void main(String[] args) {
       /*  Node head = new Node(1);
         head.left = new Node(3);
@@ -168,7 +185,14 @@ public class IsValidBST验证二叉搜索树98 {
         head.left.right = new TreeNode(3);
         //  head.right.left = new  TreeNode(3);
         head.right.right = new TreeNode(7);
-        boolean a = isBST4(head);
+
+        TreeNode root = new TreeNode(2);
+        TreeNode leftNode = new TreeNode(1);
+        TreeNode rightNode = new TreeNode(3);
+
+        root.left = leftNode;
+        root.right = rightNode;
+        boolean a = isBST5(root);
 
     }
 
