@@ -1,0 +1,30 @@
+version: '3'
+services:
+  zx-nginx:
+    image: nginx:1.19.3-alpine
+    container_name: zx-nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - /home/zhangxin/nginx:/etc/nginx
+  zx-tomcat1:
+    image: tomcat:9.0.20-jre8
+    container_name: zx-tomcat1
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - /home/zhangxin/tomcat1/webapps:/usr/local/tomcat/webapps
+    depends_on:
+      - zx-nginx
+  zx-tomcat2:
+    image: tomcat:9.0.20-jre8
+    container_name: zx-tomcat2
+    restart: always
+    ports:
+      - 8081:8080
+    volumes:
+      - /home/zhangxin/tomcat2/webapps:/usr/local/tomcat/webapps
+    depends_on:
+      - zx-nginx
