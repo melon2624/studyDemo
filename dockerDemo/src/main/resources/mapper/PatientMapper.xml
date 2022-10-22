@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zx.mapper.PatientMapper">
+  <resultMap id="BaseResultMap" type="com.zx.entity.Patient">
+    <!--@mbg.generated generated on Sat Oct 22 09:16:32 CST 2022.-->
+    <!--@Table patient-->
+ <!--   <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="applyDepartment" jdbcType="VARCHAR" property="applydepartment" />
+    <result column="age" jdbcType="VARCHAR" property="age" />
+    <result column="doubleDoctor" jdbcType="VARCHAR" property="doubledoctor" />
+    <result column="fee" jdbcType="VARCHAR" property="fee" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="checkFind" jdbcType="VARCHAR" property="checkfind" />
+    <result column="printTime" jdbcType="VARCHAR" property="printtime" />
+    <result column="gestationalWeek" jdbcType="VARCHAR" property="gestationalweek" />
+    <result column="checkTips" jdbcType="VARCHAR" property="checktips" />
+    <result column="patientSource" jdbcType="VARCHAR" property="patientsource" />
+    <result column="printDoctor" jdbcType="VARCHAR" property="printdoctor" />
+    <result column="checkNo" jdbcType="VARCHAR" property="checkno" />
+    <result column="registerTime" jdbcType="VARCHAR" property="registertime" />
+    <result column="patientID" jdbcType="VARCHAR" property="patientid" />
+    <result column="checkDoctor" jdbcType="VARCHAR" property="checkdoctor" />
+    <result column="checkPosition" jdbcType="VARCHAR" property="checkposition" />
+    <result column="clinicalDiagnosis" jdbcType="VARCHAR" property="clinicaldiagnosis" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="checkState" jdbcType="VARCHAR" property="checkstate" />
+    <result column="checkEquipment" jdbcType="VARCHAR" property="checkequipment" />
+    <result column="recordDoctor" jdbcType="VARCHAR" property="recorddoctor" />
+    <result column="checkType" jdbcType="VARCHAR" property="checktype" />-->
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Sat Oct 22 09:16:32 CST 2022.-->
+    id, `name`, applyDepartment, age, doubleDoctor, fee, phone, checkFind, printTime, 
+    gestationalWeek, checkTips, patientSource, printDoctor, checkNo, registerTime, patientID, 
+    checkDoctor, checkPosition, clinicalDiagnosis, sex, checkState, checkEquipment, recordDoctor, 
+    checkType
+  </sql>
+</mapper>
