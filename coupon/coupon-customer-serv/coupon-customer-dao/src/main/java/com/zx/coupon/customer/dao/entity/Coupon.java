@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.zx.coupon.template.api.bean.CouponTemplateInfo;
 import com.zx.coupon.template.api.enums.CouponStatus;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Transient;
@@ -18,6 +19,7 @@ import java.util.Date;
 
 @TableName(value = "`coupon`")
 @Data
+@Builder
 public class Coupon {
 
     @TableId(value = "Id", type = IdType.AUTO)

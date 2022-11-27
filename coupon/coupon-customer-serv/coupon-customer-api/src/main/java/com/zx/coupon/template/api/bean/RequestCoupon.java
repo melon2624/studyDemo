@@ -16,10 +16,10 @@ import javax.validation.constraints.NotNull;
 public class RequestCoupon {
 
     // 用户领券
-    @NotNull
+    //@NotNull
     private Long userId;
 
-    @NotNull
+    /*@NotNull*/
     private Long couponTemplateId;
 
     /** 优惠券模板信息 */

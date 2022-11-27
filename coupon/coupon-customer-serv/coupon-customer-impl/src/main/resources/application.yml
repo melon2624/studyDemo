@@ -4,8 +4,17 @@ server:
   error:
     include-message: always
 
-
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: zhangxin
+    url: jdbc:mysql://43.138.153.143:4306/zhangxin?useUnicode=true&&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+  mybatis-plus:
+    mapper-locations: mapper/*.xml
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #
+
   cloud:
     nacos:
       discovery:
@@ -34,3 +43,11 @@ spring:
         # 向注册中心注册服务，默认为true
         # 如果只消费服务，不作为服务提供方，倒是可以设置成false，减少开销
         register-enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #???????????? mybatis????????mp?????
+
+logging:
+  level:
+    com.broadview.coupon: debug

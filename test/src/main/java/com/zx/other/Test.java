@@ -5,10 +5,7 @@ import com.zx.other.date.DateUtils;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 
 /**
  * @author : zhangxin
@@ -121,22 +118,12 @@ class Solution {
 
     public static void main(String[] args) {
 
-        StringBuilder stringBuilder = new StringBuilder();
+        Student student = new Student();
 
-        List<Integer> list = new ArrayList<>();
+        Optional<Student> stu = Optional.of(student);
+        System.out.println(stu.isPresent());
 
-        list.add(1);
-        list.add(2);
-        list.add(3);
 
-        for (Integer s : list) {
-            stringBuilder.append(s + ",");
-        }
-        System.out.println(stringBuilder.toString());
-        String string = stringBuilder.toString();
-
-        String qqq = string.substring(0, string.length() - 1);
-        System.out.println(qqq);
       /*  byte g = 'b';
         System.out.println(g);
         char h = (char) g;

@@ -1,7 +1,7 @@
 package com.zx.coupon.customer.service;
 
 import com.zx.coupon.customer.dao.entity.Coupon;
-import com.zx.coupon.template.api.CouponInfo;
+import com.zx.coupon.template.api.bean.CouponInfo;
 
 /**
  * @author zhangxin
