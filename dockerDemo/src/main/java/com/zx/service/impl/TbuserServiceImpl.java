@@ -35,6 +35,10 @@ public class TbuserServiceImpl extends ServiceImpl<TbuserMapper, Tbuser>
     }
 
 
+    @Override
+    public List<Tbuser> add() {
+        return null;
+    }
 }
 
 

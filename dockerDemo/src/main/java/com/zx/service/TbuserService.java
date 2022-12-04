@@ -4,6 +4,8 @@ package com.zx.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.zx.entity.Tbuser;
 
+import java.util.List;
+
 /**
 * @author xkdtm
 * @description 针对表【tbuser】的数据库操作Service
@@ -11,4 +13,5 @@ import com.zx.entity.Tbuser;
 */
 public interface TbuserService extends IService<Tbuser> {
 
+    List<Tbuser> add();
 }

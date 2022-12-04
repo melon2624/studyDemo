@@ -16,6 +16,20 @@
         userid,username,password,
         userroles,nickname
     </sql>
+    <insert id="add">
+
+        insert  into   compare1 ( pictureName,sectionType) values (#{compareVo.pictureName},#{compareVo.sectionType})
+
+    </insert>
+    <insert id="add2">
+
+        insert  into   compare2 ( pictureName,sectionType) values (#{compareVo.pictureName},#{compareVo.sectionType})
+    </insert>
+    <insert id="adAnser">
+
+        insert  into answer(message)  values (#{ message })
+
+  </insert>
 
     <select id="test" parameterType="java.lang.Integer" resultType="java.lang.Integer" >
         select count(*) from server_list where
@@ -24,6 +38,13 @@
             #{item}
         </foreach>
 
+    </select>
+    <select id="select1" resultType="com.zx.entity.CompareVo">
+        select  pictureName,sectionType from   compare1
+    </select>
+
+    <select id="select2" resultType="com.zx.entity.CompareVo">
+        select  pictureName,sectionType from   compare2
     </select>
 
 </mapper>
