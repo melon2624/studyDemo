@@ -1,7 +1,6 @@
 package com.zx.util;
 
 
-import com.google.gson.Gson;
 import org.apache.poi.hssf.usermodel.*;
 import java.beans.IntrospectionException;
 import java.beans.PropertyDescriptor;
@@ -31,7 +30,6 @@ import java.util.zip.ZipOutputStream;
  */
 public class ExcelExportHelper {
 
-    private Gson gson = new Gson();
 
     /**
      * 时间格式：默认为yyyy-MM-dd
