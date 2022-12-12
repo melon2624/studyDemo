@@ -1,11 +1,7 @@
 package com.zx.controller;
 
-import cn.hutool.core.util.ObjectUtil;
-import cn.hutool.crypto.Mode;
-import cn.hutool.crypto.Padding;
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.symmetric.AES;
-import cn.hutool.crypto.symmetric.DES;
 import cn.hutool.json.JSONUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -14,6 +10,8 @@ import com.zx.entity.HgBean;
 import com.zx.entity.Tbuser;
 import com.zx.mapper.TbuserMapper;
 import com.zx.service.TbuserService;
+import com.zx.util.Base64Util;
+import com.zx.util.Md5EncryptionUtils;
 import com.zx.utils.HttpClientResult;
 import com.zx.utils.HttpClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;

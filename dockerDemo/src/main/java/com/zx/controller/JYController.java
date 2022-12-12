@@ -13,8 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,62 +38,12 @@ public class JYController {
 
     @PostMapping("/compare")
     public String test(HttpServletRequest request) {
-   /*     List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("files");
-        System.out.printf("zhangxinxinxinxinxinxinxinxinxin");
-
-        // 获得Workbook工作薄对象
-        Workbook workbook = getWorkBook(files.get(0));
-        System.out.println(workbook);
-        return "zhangxin";*/
-
 
         List<CompareVo> c1 = tbuserMapper.select1();
 
- /*       HashSet<String> set1 = new HashSet<>();
-
-        for (CompareVo c : c1) {
-            if (set1.contains(c.getPictureName())){
-                System.out.println(c.getPictureName());
-            }else {
-                set1.add(c.getPictureName());
-            }
-        }*/
-
         System.out.println("----------------------");
 
-
         List<CompareVo> c2 = tbuserMapper.select2();
-    /*    HashSet<String> set2 = new HashSet<>();
-
-        for (CompareVo c : c2) {
-            if (set2.contains(c.getPictureName())){
-                System.out.println(c.getPictureName());
-            }else {
-                set2.add(c.getPictureName());
-            }
-        }*/
-
-
-     /*   Map<String, String> map2 = c2.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
-        Map<String, String> map1 = c1.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
-
-        for (Map.Entry<String, String> entry : map1.entrySet()) {
-            String pictureName1 = entry.getKey();
-
-            String sectionType2 = map2.get(pictureName1);
-
-            if (sectionType2 != null) {
-                boolean equals = sectionType2.equals(entry.getValue());
-                if (!equals) {
-                    String s = "表格1中的 " + pictureName1 + " 医生1的判断为： " + entry.getValue();
-                    String s2 = "----表格2中的 ："+pictureName1+" 为：  " + map2.get(pictureName1);
-                    tbuserMapper.adAnser(s + s2);
-                }
-            } else {
-                String s = "表格1中的  " + pictureName1 + "在表格2中不存在";
-                tbuserMapper.adAnser(s);
-            }
-        }*/
 
         Map<String, String> map1 = c1.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
 

@@ -1,4 +1,4 @@
-package com.zx.controller;
+package com.zx.util;
 
 import cn.hutool.core.util.StrUtil;
 

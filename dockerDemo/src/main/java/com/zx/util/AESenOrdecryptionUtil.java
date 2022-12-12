@@ -1,4 +1,4 @@
-package com.zx.controller;
+package com.zx.util;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

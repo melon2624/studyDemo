@@ -14,4 +14,8 @@ public interface PatientService  extends IService<Patient> {
 
 
     void saveExcelList(Workbook workbook);
+
+    void excel();
+
+    void getSortData(Workbook workbook);
 }

@@ -1,4 +1,4 @@
-package com.zx.controller;
+package com.zx.util;
 
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.symmetric.AES;
