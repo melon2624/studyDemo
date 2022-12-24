@@ -13,15 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.*;
 
 /**
  * @author zhangxin
@@ -38,13 +38,55 @@ public class JYController {
 
     @PostMapping("/compare")
     public String test(HttpServletRequest request) {
+   /*     List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("files");
+        System.out.printf("zhangxinxinxinxinxinxinxinxinxin");
 
+        // 获得Workbook工作薄对象
+        Workbook workbook = getWorkBook(files.get(0));
+        System.out.println(workbook);
+        return "zhangxin";*/
+
+ /*       HashSet<String> set1 = new HashSet<>();
+
+        for (CompareVo c : c1) {
+            if (set1.contains(c.getPictureName())){
+                System.out.println(c.getPictureName());
+            }else {
+                set1.add(c.getPictureName());
+            }
+        }*/
+
+    /*    HashSet<String> set2 = new HashSet<>();
+
+        for (CompareVo c : c2) {
+            if (set2.contains(c.getPictureName())){
+                System.out.println(c.getPictureName());
+            }else {
+                set2.add(c.getPictureName());
+            }
+        }*/
+
+     /*   Map<String, String> map2 = c2.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
+        Map<String, String> map1 = c1.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
+        for (Map.Entry<String, String> entry : map1.entrySet()) {
+            String pictureName1 = entry.getKey();
+            String sectionType2 = map2.get(pictureName1);
+            if (sectionType2 != null) {
+                boolean equals = sectionType2.equals(entry.getValue());
+                if (!equals) {
+                    String s = "表格1中的 " + pictureName1 + " 医生1的判断为： " + entry.getValue();
+                    String s2 = "----表格2中的 ："+pictureName1+" 为：  " + map2.get(pictureName1);
+                    tbuserMapper.adAnser(s + s2);
+                }
+            } else {
+                String s = "表格1中的  " + pictureName1 + "在表格2中不存在";
+                tbuserMapper.adAnser(s);
+            }
+        }*/
+
+/*
         List<CompareVo> c1 = tbuserMapper.select1();
-
-        System.out.println("----------------------");
-
         List<CompareVo> c2 = tbuserMapper.select2();
-
         Map<String, String> map1 = c1.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
 
         Map<String, String> map2 = c2.stream().collect(Collectors.toMap(CompareVo::getPictureName, CompareVo::getSectionType));
@@ -66,6 +108,7 @@ public class JYController {
                 tbuserMapper.adAnser(s);
             }
         }
+*/
 
 
         return null;
@@ -75,17 +118,26 @@ public class JYController {
 
     @PostMapping("/compare1")
     public String test2() {
-        String filePath = "C:\\Users\\xkdtm\\Desktop\\1121\\医生2-统计的结果.csv";
+        String filePath = "C:\\Users\\xkdtm\\Desktop\\1121\\class_measure.csv";
         ArrayList<String[]> arrList = readCsvByReader(filePath);
 
         for (int row = 1; row < arrList.size() - 1; row++) {
+            String[] arr = arrList.get(row);
             String a = arrList.get(row)[0];
             String b = arrList.get(row)[1];
             CompareVo compareVo = new CompareVo();
             compareVo.setPictureName(a);
             compareVo.setSectionType(b);
+            if (arr.length >= 3) {
+                compareVo.setNum1(arrList.get(row)[2]);
+            }
+            if (arr.length >= 4) {
+                compareVo.setNum2(arrList.get(row)[3]);
+            }
+            if (arr.length >= 5) {
+                compareVo.setNum3(arrList.get(row)[4]);
+            }
             tbuserMapper.add2(compareVo);
-
         }
 
         return null;
@@ -116,8 +168,32 @@ public class JYController {
 
     public static void main(String[] args) {
 
-        String filePath = "C:\\Users\\xkdtm\\Desktop\\1121\\医生1-统计结果.csv";
-        ArrayList<String[]> arrList = readCsvByReader(filePath);
+      /*  String filePath = "C:\\Users\\xkdtm\\Desktop\\1121\\医生1-统计结果.csv";
+        ArrayList<String[]> arrList = readCsvByReader(filePath);*/
+
+        LocalDateTime now = LocalDateTime.now();
+
+        LocalDateTime aaa = LocalDateTime.now().plusDays(7);
+        System.out.println(aaa);
+
+/*
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(4);
+        integerList.add(2);
+        integerList.add(6);
+        integerList.add(3);
+        Optional<Integer> max = integerList.stream().max(Integer::compareTo);
+        System.out.println(max.get());
+*/
+
+        long a = Duration.between(now, aaa).toDays();
+
+        String aaaa="sssaaa";
+        String b=aaaa.replace("a","bb");
+        System.out.println(b);
+
+
+        System.out.println(a);
 
 
     }

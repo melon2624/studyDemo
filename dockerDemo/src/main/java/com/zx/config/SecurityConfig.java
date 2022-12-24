@@ -49,7 +49,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         /**
              * 拦截 http 安全认证模式 设置为formLogin模式
          */
-        http.authorizeRequests().antMatchers("/**").fullyAuthenticated()
-                .and().formLogin();
+        /*http.authorizeRequests().antMatchers("/**").fullyAuthenticated()
+                .and().formLogin();*/
+
+        http.authorizeRequests()
+                .anyRequest().authenticated() //所有请求都需要通过认证
+                .and()
+                .httpBasic() //Basic登录
+                .and()
+                .csrf().disable(); //关跨域保护
+
+
     }
 }

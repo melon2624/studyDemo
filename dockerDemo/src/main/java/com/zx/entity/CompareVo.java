@@ -14,6 +14,12 @@ public class CompareVo {
 
     private String sectionType;
 
+    private String num1;
+
+    private String num2;
+
+    private  String num3;
+
 
 
 }

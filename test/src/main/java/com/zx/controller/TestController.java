@@ -3,6 +3,7 @@ package com.zx.controller;
 import com.zx.Annotation.MyAnnotation;
 import com.zx.redis.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,9 @@ public class TestController {
     @Autowired
     RedisUtils redisUtils;
 
+
+    @Value("${spring.redis.host}")
+    String aaa;
 
     @RequestMapping("/zx/test")
     public String test(HttpServletRequest request, HttpServletResponse response) {
@@ -66,7 +70,8 @@ public class TestController {
     @RequestMapping("/zhangxin")
     @MyAnnotation(value = "zhangxinaopppppppp")
     public  void  aopTest(HttpServletRequest request, HttpServletResponse response){
-
+        redisUtils.setString("zzz","hhhhhh");
+        System.out.println(aaa);
         System.out.printf("-------------");
     }
 

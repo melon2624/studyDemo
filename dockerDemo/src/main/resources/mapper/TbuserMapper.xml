@@ -18,12 +18,13 @@
     </sql>
     <insert id="add">
 
-        insert  into   compare1 ( pictureName,sectionType) values (#{compareVo.pictureName},#{compareVo.sectionType})
-
+        insert  into   compare1 ( pictureName,sectionType,num1,num2,num3) values (#{compareVo.pictureName},#{compareVo.sectionType},
+        #{compareVo.num1},  #{compareVo.num2},  #{compareVo.num3}
+        )
     </insert>
     <insert id="add2">
-
-        insert  into   compare2 ( pictureName,sectionType) values (#{compareVo.pictureName},#{compareVo.sectionType})
+        insert  into   compare3 ( pictureName,sectionType,num1,num2,num3)  values (#{compareVo.pictureName},#{compareVo.sectionType},
+          #{compareVo.num1},  #{compareVo.num2},  #{compareVo.num3})
     </insert>
     <insert id="adAnser">
 
