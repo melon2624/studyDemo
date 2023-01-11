@@ -91,13 +91,13 @@
             <version>2.0</version>
         </dependency>
 
-        <!-->spring-boot 整合security -->
+     <!--   &lt;!&ndash;dash;&gt;spring-boot 整合security &ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- Spring Security OAuth2 -->
+        &lt;!&ndash; Spring Security OAuth2 &ndash;&gt;
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
@@ -109,7 +109,7 @@
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
             <version>0.6.0</version>
-        </dependency>
+        </dependency>-->
 
 
     </dependencies>

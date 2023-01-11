@@ -56,14 +56,17 @@ public class PatientController {
     public String name() {
         File file = new File("C:\\12525\\3140");
         File[] list = file.listFiles();
-        if (file.exists() && file.isDirectory()) {
+      /*  if (file.exists() && file.isDirectory()) {
             for (int i = 0; i < list.length; i++) {
                 String name = list[i].getName();
                 Tbuser tbuser = new Tbuser();
                 tbuser.setUsername(name);
                 tbuserService.save(tbuser);
             }
-        }
+        }*/
+
+
+
         return "success";
     }
 

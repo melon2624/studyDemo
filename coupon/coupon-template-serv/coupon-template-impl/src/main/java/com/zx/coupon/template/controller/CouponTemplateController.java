@@ -25,6 +25,11 @@ public class CouponTemplateController {
     @GetMapping("/getTemplate")
     public CouponTemplateInfo getTemplate(@RequestParam("id") Long id){
         log.info("Load template, id={}", id);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return couponTemplateService.loadTemplateInfo(id);
     }
 

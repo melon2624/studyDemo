@@ -255,55 +255,53 @@ public class PatientServiceImpl extends ServiceImpl<PatientMapper, Patient>
         String fileName = "数据" + System.currentTimeMillis();
 
         String[] header = new String[]{"姓名", "申请科室", "年龄", "双签医生", "检查费用", "联系电话", "打印时间", "检查时间", "孕周",
-                "检查提示", "病人来源", "打印医生", "检查所见", "检查号", "登记时间", "病人ID", "检查医生", "检查部位", "临床诊断", "性别", "检查状态",  "检查设备", "记录医生",
+                "检查提示", "病人来源", "打印医生", "检查所见", "检查号", "登记时间", "病人ID", "检查医生", "检查部位", "临床诊断", "性别", "检查状态", "检查设备", "记录医生",
                 "检查类型", "检查备注"
-                };
+        };
 
 
         List<String[]> list = new ArrayList<>();
 
 
-            for (Patient patient : patientList) {
-                String[] body = new String[25];
-                body[0] = patient.getName();
-                body[1] = patient.getApplydepartment();
-                body[2] = patient.getAge();
-                body[3] = patient.getDoubledoctor();
-                body[4] = patient.getFee();
-                body[5] = patient.getPhone();
-                body[6] = patient.getPrinttime();
-                body[7] = patient.getChecktime();
-                body[8] = patient.getGestationalweek();
-                body[9] = patient.getChecktips();
-                body[10] = patient.getPatientsource();
-                body[11] = patient.getPrintdoctor();
-                body[12] = patient.getCheckfind();
-                body[13] = patient.getCheckno();
-                body[14] =patient.getRegistertime();
-                body[15] = patient.getPatientid();
-                body[16] = patient.getCheckdoctor();
-                body[17] = patient.getCheckposition();
-                body[18] = patient.getClinicaldiagnosis();
-                body[19] = patient.getSex();
-                body[20] =patient.getCheckstate();
-                body[21] = patient.getCheckequipment();
-                body[22] = patient.getRecorddoctor();
-                body[23] =patient.getChecktype();
-                body[24] = patient.getCheckremark();
-                list.add(body);
+        for (Patient patient : patientList) {
+            String[] body = new String[25];
+            body[0] = patient.getName();
+            body[1] = patient.getApplydepartment();
+            body[2] = patient.getAge();
+            body[3] = patient.getDoubledoctor();
+            body[4] = patient.getFee();
+            body[5] = patient.getPhone();
+            body[6] = patient.getPrinttime();
+            body[7] = patient.getChecktime();
+            body[8] = patient.getGestationalweek();
+            body[9] = patient.getChecktips();
+            body[10] = patient.getPatientsource();
+            body[11] = patient.getPrintdoctor();
+            body[12] = patient.getCheckfind();
+            body[13] = patient.getCheckno();
+            body[14] = patient.getRegistertime();
+            body[15] = patient.getPatientid();
+            body[16] = patient.getCheckdoctor();
+            body[17] = patient.getCheckposition();
+            body[18] = patient.getClinicaldiagnosis();
+            body[19] = patient.getSex();
+            body[20] = patient.getCheckstate();
+            body[21] = patient.getCheckequipment();
+            body[22] = patient.getRecorddoctor();
+            body[23] = patient.getChecktype();
+            body[24] = patient.getCheckremark();
+            list.add(body);
 
         }
-         String path = "C:/12525/3/";
+        String path = "C:/12525/3/";
         ExportExcelDto exportExcelDto = new ExportExcelDto();
         exportExcelDto.setFileName(fileName);
-       //  exportExcelDto.setFilePath(importInfoPath);
+        //  exportExcelDto.setFilePath(importInfoPath);
         exportExcelDto.setHeader(header);
         exportExcelDto.setList(list);
         exportExcelDto.setSheetTitle("数据");
         HSSFWorkbook book = excelImportHelper.exportExcel(exportExcelDto.getHeader(), exportExcelDto.getList(), exportExcelDto.getSheetTitle()
                 , path, exportExcelDto.getFileName());
-
-
 
     }
 

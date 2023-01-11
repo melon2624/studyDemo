@@ -1,18 +1,14 @@
 package com.zx.config;
 
-import org.springframework.boot.web.servlet.MultipartConfigFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
-import javax.servlet.MultipartConfigElement;
 
-import static com.sun.deploy.util.BufferUtil.MB;
+
 
 /**
  * @author zhangxin
  * @date 2022-10-22 11:04
  */
-@Configuration
+
 public class FileUploadConfig {
 /*
 
