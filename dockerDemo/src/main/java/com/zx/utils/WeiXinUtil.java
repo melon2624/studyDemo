@@ -6,6 +6,10 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Formatter;
 
 /**
  * @author zhangxin
@@ -121,5 +125,82 @@ public class WeiXinUtil {
         }
 
     }
+
+
+    /**
+     * Sha1加密方法
+     *
+     * @param str
+     * @return
+     */
+    public static String getSha1(String str) {
+        if (str == null || str.length() == 0) {
+            return null;
+        }
+        char[] hexDigits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'A', 'B', 'C', 'D', 'E', 'F'};
+        try {
+            MessageDigest mdTemp = MessageDigest.getInstance("SHA1");
+            mdTemp.update(str.getBytes(StandardCharsets.UTF_8));
+            byte[] md = mdTemp.digest();
+            int j = md.length;
+            char[] buf = new char[j * 2];
+            int k = 0;
+            for (int i = 0; i < j; i++) {
+                byte byte0 = md[i];
+                buf[k++] = hexDigits[byte0 >>> 4 & 0xf];
+                buf[k++] = hexDigits[byte0 & 0xf];
+            }
+            return new String(buf);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static void main1(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+      //  String aaa="HoagFKDcsGMVCIY2vOjf9jkmZ1KQu8HqhbCijGmc0Ljg_ejdH7Mab7iyI0iSSGZ4tk9kM5POSijMek3PapyJCg&noncestr=B8YOV6H6w6uaPH0S&timestamp=1673607053&url=https://qiwei.guokang.com/workKanban/service/importMedicalRecord.htm?id=854112&memberCode=11402950&objId=1074703";
+
+
+        String aaa="jsapi_ticket=HoagFKDcsGMVCIY2vOjf9jkmZ1KQu8HqhbCijGmc0Ljg_ejdH7Mab7iyI0iSSGZ4tk9kM5POSijMek3PapyJCg&noncestr=9K7XtYqPWWPvBEZd&timestamp=1673609692&url=https://qiwei.guokang.com/workKanban/service/importMedicalRecord.htm?id=854112&memberCode=11402950&objId=1074703";
+           System.out.println(getSha1(aaa));
+
+                     MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
+            sha1.reset();
+            sha1.update(aaa.getBytes("UTF-8"));
+            Formatter formatter = new Formatter();
+            for (byte b : sha1.digest()) {
+                formatter.format("%02x", b);
+            }
+            String result = formatter.toString();
+        System.out.println(result);
+            formatter.close();
+
+    }
+
+    public static void main(String[] args) {
+
+
+        String aaa="全程导医";
+
+        String bbb="全程导医-专家预约（非指定）";
+        
+        String ccc="专家上门-营养/运动-专家(1h)";
+        
+        String[] split = aaa.split("-");
+
+        String[] split1 = bbb.split("-");
+
+        String[] split2 = ccc.split("-");
+        
+
+
+        /* String aaa="ewifdjuhsoaidhttpsaaaaaaaahttp";
+
+        System.out.println(aaa.replaceAll("http","https"));*/
+
+    }
+
+
+
 
 }
